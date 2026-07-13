@@ -2,11 +2,12 @@
 
 @theme {
   --color-cream: #fcf8f0;
+  --color-paper: #f6f0e7;
   --color-ink: #1d1814;
-  --color-moss: #4f604a;
+  --color-moss: #465a41;
   --color-coffee: #2b1b14;
-  --color-amber: #a97843;
-  --color-muted: #6e665d;
+  --color-amber: #b9854d;
+  --color-muted: #6a6258;
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -21,9 +22,9 @@
     min-width: 320px;
     overflow-x: clip;
     background:
-      radial-gradient(circle at 12% 8%, rgba(169, 120, 67, 0.12), transparent 28rem),
-      radial-gradient(circle at 88% 32%, rgba(79, 96, 74, 0.1), transparent 26rem),
-      linear-gradient(180deg, #f4efe7 0%, #eef0e9 58%, #f2eee6 100%);
+      radial-gradient(circle at 12% 8%, rgba(185, 133, 77, 0.14), transparent 28rem),
+      radial-gradient(circle at 88% 32%, rgba(70, 90, 65, 0.1), transparent 26rem),
+      linear-gradient(180deg, #f5efe6 0%, #eef0e9 56%, #f6f0e7 100%);
     color: #29231d;
     font-family: var(--font-sans);
     font-synthesis-weight: none;
@@ -57,7 +58,7 @@
   }
 
   .section-padding {
-    @apply py-[76px] md:py-24;
+    @apply py-[78px] md:py-26;
   }
 
   .eyebrow {
@@ -65,13 +66,13 @@
   }
 
   .section-title {
-    @apply max-w-2xl text-[clamp(2.8rem,5vw,5.7rem)] leading-[0.92];
+    @apply max-w-2xl text-[clamp(2.7rem,5vw,5.6rem)] leading-[0.93];
   }
 
   .primary-button,
   .light-button,
   .cream-button {
-    @apply inline-flex min-h-12 w-full items-center justify-center rounded-full px-5 text-sm font-bold transition hover:-translate-y-0.5 motion-reduce:transition-none sm:w-auto;
+    @apply inline-flex min-h-12 w-full items-center justify-center rounded-full px-5 text-sm font-bold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber motion-reduce:transition-none sm:w-auto;
   }
 
   .primary-button {
@@ -105,16 +106,16 @@
       radial-gradient(circle at 18% 44%, rgba(252, 248, 240, 0.55), transparent 25rem),
       linear-gradient(
         90deg,
-        rgba(242, 238, 230, 0.98) 0%,
-        rgba(242, 238, 230, 0.88) 35%,
-        rgba(242, 238, 230, 0.32) 62%,
+        rgba(245, 239, 230, 0.98) 0%,
+        rgba(245, 239, 230, 0.88) 35%,
+        rgba(245, 239, 230, 0.32) 62%,
         rgba(43, 27, 20, 0.12) 100%
       ),
       linear-gradient(180deg, rgba(29, 24, 20, 0.01) 0%, rgba(29, 24, 20, 0.12) 100%);
   }
 
   .site-header {
-    @apply flex w-full items-center justify-between gap-6 border-b border-[rgba(41,35,29,0.11)] bg-cream/65 px-4 py-4 shadow-[0_1px_0_rgba(255,255,255,0.34)] backdrop-blur-xl sm:px-[max(20px,calc((100%_-_1180px)/2))] sm:py-[18px];
+    @apply flex w-full items-center justify-between gap-6 border-b border-[rgba(41,35,29,0.11)] bg-paper/70 px-4 py-4 shadow-[0_1px_0_rgba(255,255,255,0.34)] backdrop-blur-xl sm:px-[max(20px,calc((100%_-_1180px)/2))] sm:py-[18px];
   }
 
   .brand-link {
@@ -163,19 +164,19 @@
   }
 
   .hero-title {
-    @apply mb-5 max-w-[900px] text-[clamp(3.25rem,10.5vw,4.85rem)] leading-[0.91] drop-shadow-[0_16px_28px_rgba(42,23,16,0.08)] md:max-w-[720px] lg:max-w-[760px] lg:text-[clamp(4.5rem,7vw,7.2rem)];
+    @apply mb-5 max-w-[900px] text-[clamp(3.25rem,10.5vw,4.85rem)] leading-[0.91] drop-shadow-[0_16px_28px_rgba(42,23,16,0.08)] md:max-w-[720px] lg:max-w-[780px] lg:text-[clamp(4.5rem,6.7vw,7rem)];
   }
 
   .hero-copy {
-    @apply mb-8 max-w-[610px] text-base font-semibold leading-[1.7] text-ink drop-shadow-[0_1px_14px_rgba(245,239,229,0.9)] md:text-[1.16rem] md:font-normal md:text-[#4f4538] lg:max-w-[520px];
+    @apply mb-8 max-w-[610px] text-base font-semibold leading-[1.7] text-ink drop-shadow-[0_1px_14px_rgba(245,239,229,0.9)] md:text-[1.12rem] md:font-medium md:text-[#4f4538] lg:max-w-[520px];
   }
 
   .intro-section {
-    @apply relative mx-auto grid w-[min(1180px,calc(100%_-_28px))] gap-7 border-b border-[rgba(41,35,29,0.15)] py-[76px] md:w-[min(1180px,calc(100%_-_40px))] md:gap-11;
+    @apply relative mx-auto grid w-[min(1180px,calc(100%_-_28px))] gap-7 border-b border-[rgba(41,35,29,0.15)] py-[74px] md:w-[min(1180px,calc(100%_-_40px))] md:gap-11 md:py-24;
   }
 
   .intro-copy {
-    @apply mx-auto max-w-[980px] text-center font-display text-[clamp(2.4rem,4.4vw,4.7rem)] leading-none text-[#3f372e] text-balance;
+    @apply mx-auto max-w-[920px] text-center font-display text-[clamp(2.25rem,4.2vw,4.55rem)] leading-[0.98] text-[#3f372e] text-balance;
   }
 
   .principles-grid {
@@ -186,8 +187,20 @@
     @apply min-w-0 border-[rgba(41,35,29,0.15)] px-2 py-4 text-center text-[0.68rem] font-bold uppercase tracking-[0.08em] text-moss md:px-3.5 md:py-[18px] md:text-xs;
   }
 
+  .principle-item:nth-child(even) {
+    @apply border-l;
+  }
+
+  .principle-item:nth-child(n+3) {
+    @apply border-t md:border-t-0;
+  }
+
+  .principle-item + .principle-item {
+    @apply md:border-l;
+  }
+
   .menu-grid {
-    @apply grid gap-4 md:grid-cols-3;
+    @apply grid items-stretch gap-4 md:grid-cols-3;
   }
 
   .menu-card {
@@ -215,7 +228,7 @@
   }
 
   .menu-content {
-    @apply grid gap-4 p-5 md:min-h-[164px] md:p-6;
+    @apply grid content-start gap-4 p-5 md:min-h-[164px] md:p-6;
     background: linear-gradient(145deg, rgba(255, 250, 241, 0.96), rgba(235, 225, 209, 0.9));
   }
 
@@ -237,7 +250,7 @@
   }
 
   .visit-section {
-    @apply mx-auto mb-6 grid w-[min(1180px,calc(100%_-_28px))] gap-7 rounded-lg p-6 text-cream shadow-[0_28px_70px_rgba(42,23,16,0.2)] md:w-[min(1180px,calc(100%_-_40px))] md:p-[52px] lg:flex lg:items-end lg:justify-between;
+    @apply mx-auto mb-8 grid w-[min(1180px,calc(100%_-_28px))] gap-7 rounded-lg p-6 text-cream shadow-[0_28px_70px_rgba(42,23,16,0.22),inset_0_1px_0_rgba(255,250,241,0.14)] md:w-[min(1180px,calc(100%_-_40px))] md:p-[52px] lg:flex lg:items-end lg:justify-between;
     background:
       radial-gradient(circle at 88% 16%, rgba(185, 130, 74, 0.32), transparent 18rem),
       linear-gradient(145deg, #321b12, #2b1b14 60%, #170c08);
