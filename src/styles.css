@@ -96,22 +96,23 @@
   }
 
   .hero-image {
-    @apply absolute inset-0 h-full w-full scale-[1.015] object-cover object-[64%_center] saturate-[0.92] md:object-[62%_center] lg:object-center;
+    @apply absolute inset-0 h-full w-full scale-[1.012] object-cover object-[64%_center] saturate-[1.02] contrast-[1.04] brightness-[0.96] md:object-[62%_center] lg:object-center;
   }
 
   .hero-overlay {
     @apply absolute inset-0;
     background:
-      radial-gradient(circle at 72% 52%, rgba(23, 12, 8, 0.18), transparent 21rem),
-      radial-gradient(circle at 18% 44%, rgba(252, 248, 240, 0.55), transparent 25rem),
+      radial-gradient(circle at 75% 54%, rgba(34, 18, 12, 0.24), transparent 24rem),
+      radial-gradient(circle at 23% 44%, rgba(255, 249, 239, 0.78), transparent 25rem),
+      radial-gradient(circle at 45% 74%, rgba(245, 239, 230, 0.34), transparent 19rem),
       linear-gradient(
         90deg,
-        rgba(245, 239, 230, 0.98) 0%,
-        rgba(245, 239, 230, 0.88) 35%,
-        rgba(245, 239, 230, 0.32) 62%,
-        rgba(43, 27, 20, 0.12) 100%
+        rgba(247, 241, 231, 0.9) 0%,
+        rgba(247, 241, 231, 0.68) 34%,
+        rgba(247, 241, 231, 0.14) 58%,
+        rgba(39, 24, 17, 0.2) 100%
       ),
-      linear-gradient(180deg, rgba(29, 24, 20, 0.01) 0%, rgba(29, 24, 20, 0.12) 100%);
+      linear-gradient(180deg, rgba(29, 24, 20, 0.02) 0%, rgba(29, 24, 20, 0.18) 100%);
   }
 
   .site-header {
@@ -160,15 +161,15 @@
   }
 
   .hero-content {
-    @apply mx-auto grid w-[min(1180px,calc(100%_-_28px))] justify-items-center pt-10 pb-24 text-center sm:pt-12 sm:pb-28 md:w-[min(1180px,calc(100%_-_40px))] lg:justify-items-start lg:pt-[clamp(72px,10vh,116px)] lg:text-left;
+    @apply mx-auto grid w-[min(1180px,calc(100%_-_28px))] justify-items-center pt-10 pb-24 text-center sm:pt-12 sm:pb-28 md:w-[min(1180px,calc(100%_-_40px))] lg:justify-items-start lg:pt-[clamp(72px,10vh,112px)] lg:text-left;
   }
 
   .hero-title {
-    @apply mb-5 max-w-[900px] text-[clamp(3.25rem,10.5vw,4.85rem)] leading-[0.91] drop-shadow-[0_16px_28px_rgba(42,23,16,0.08)] md:max-w-[720px] lg:max-w-[780px] lg:text-[clamp(4.5rem,6.7vw,7rem)];
+    @apply mb-5 max-w-[900px] text-[clamp(3.15rem,10vw,4.75rem)] leading-[0.92] text-ink text-balance drop-shadow-[0_14px_26px_rgba(245,239,229,0.32)] md:max-w-[720px] lg:max-w-[760px] lg:text-[clamp(4.35rem,6.25vw,6.55rem)];
   }
 
   .hero-copy {
-    @apply mb-8 max-w-[610px] text-base font-semibold leading-[1.7] text-ink drop-shadow-[0_1px_14px_rgba(245,239,229,0.9)] md:text-[1.12rem] md:font-medium md:text-[#4f4538] lg:max-w-[520px];
+    @apply mb-8 max-w-[610px] text-base font-bold leading-[1.72] text-[#41382f] drop-shadow-[0_1px_12px_rgba(247,241,231,0.78)] md:text-[1.1rem] md:font-semibold lg:max-w-[520px];
   }
 
   .intro-section {
