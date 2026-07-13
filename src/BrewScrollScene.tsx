@@ -211,6 +211,7 @@ export default function BrewScrollScene() {
       panels.forEach((panel, index) => {
         const isActive = index === activeStage;
         panel.style.opacity = isActive ? "1" : "0";
+        panel.style.visibility = isActive ? "visible" : "hidden";
         panel.style.transform = `translate3d(0, ${(index - activeStage) * 28}px, 0)`;
         panel.setAttribute("aria-hidden", isActive ? "false" : "true");
       });

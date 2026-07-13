@@ -326,7 +326,7 @@
   }
 
   .scene-copy {
-    @apply absolute bottom-14 left-0 h-[230px] w-[min(100%,440px)] [transform-style:preserve-3d] md:bottom-[66px] md:h-[250px] lg:top-[53%] lg:bottom-auto lg:h-[285px] lg:w-[min(440px,42vw)];
+    @apply absolute bottom-14 left-0 h-[250px] w-[min(100%,440px)] overflow-hidden [transform-style:preserve-3d] md:bottom-[66px] md:h-[270px] lg:top-[52%] lg:bottom-auto lg:h-[310px] lg:w-[min(480px,42vw)] xl:h-[330px] xl:w-[520px];
   }
 
   .scene-copy::before {
@@ -338,7 +338,7 @@
   }
 
   .scene-stage {
-    @apply absolute inset-0 z-10 opacity-0 transition duration-300 [transform-style:preserve-3d] will-change-[opacity,transform] first:opacity-100 motion-reduce:transition-none;
+    @apply invisible absolute inset-0 z-10 opacity-0 transition duration-300 [transform-style:preserve-3d] will-change-[opacity,transform] first:visible first:opacity-100 motion-reduce:transition-none;
   }
 
   .scene-progress {
