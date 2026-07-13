@@ -39,7 +39,7 @@ export function VisitSection() {
       aria-labelledby="visit-title"
     >
       <div>
-        <Eyebrow className="text-cream/70">Opening soon in Bengaluru</Eyebrow>
+        <Eyebrow className="text-cream/70">Opening soon</Eyebrow>
         <h2 id="visit-title" className="visit-title">
           A warm counter, a few seats, and a slower cup.
         </h2>

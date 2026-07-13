@@ -262,11 +262,11 @@
   }
 
   .visit-actions {
-    @apply grid gap-4 sm:flex sm:items-center sm:justify-between lg:grid lg:justify-items-end;
+    @apply grid justify-items-center gap-4 lg:justify-self-center;
   }
 
   .social-links {
-    @apply flex items-center justify-center gap-2 sm:justify-end;
+    @apply flex w-full items-center justify-center gap-2;
   }
 
   .social-link {
