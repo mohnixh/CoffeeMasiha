@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { ritualImages } from "./data/content";
 
 const stages = [
   {
@@ -210,11 +211,12 @@ export default function BrewScrollScene() {
       panels.forEach((panel, index) => {
         const isActive = index === activeStage;
         panel.style.opacity = isActive ? "1" : "0";
-        panel.style.transform = `translate3d(0, ${(index - activeStage) * 16}px, 0)`;
+        panel.style.transform = `translate3d(0, ${(index - activeStage) * 28}px, 0)`;
         panel.setAttribute("aria-hidden", isActive ? "false" : "true");
       });
 
       section.style.setProperty("--ritual-progress", p.toFixed(4));
+      section.style.setProperty("--photo-drift", `${(p * 28).toFixed(2)}px`);
       renderer.render(scene, camera);
       frame = requestAnimationFrame(render);
     };
@@ -250,6 +252,17 @@ export default function BrewScrollScene() {
       aria-labelledby="ritual-title"
     >
       <div className="scene-sticky">
+        <div className="scene-photo-stage" aria-hidden="true">
+          {ritualImages.map((image, index) => (
+            <img
+              className="scene-photo"
+              src={image.src}
+              alt=""
+              key={image.src}
+              style={{ "--photo-index": index } as React.CSSProperties}
+            />
+          ))}
+        </div>
         <canvas
           className="scene-canvas"
           ref={canvasRef}
