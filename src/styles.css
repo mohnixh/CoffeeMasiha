@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fcf8f0;
+  --color-ink: #1d1814;
+  --color-moss: #4f604a;
+  --color-coffee: #2b1b14;
+  --color-amber: #a97843;
+  --color-muted: #6e665d;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    overflow-x: clip;
+    background: linear-gradient(180deg, #f4efe7 0%, #eef0e9 58%, #f2eee6 100%);
+    color: #29231d;
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #1d1814;
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .page-width {
+    @apply mx-auto w-[min(1180px,calc(100%_-_28px))] md:w-[min(1180px,calc(100%_-_40px))];
+  }
+
+  .section-padding {
+    @apply py-16 md:py-22;
+  }
+
+  .eyebrow {
+    @apply mb-4 text-xs font-bold uppercase tracking-[0.12em] text-moss;
+  }
+
+  .section-title {
+    @apply max-w-2xl text-[clamp(2.6rem,5vw,5.6rem)] leading-[0.94];
+  }
+
+  .primary-button,
+  .light-button,
+  .cream-button {
+    @apply inline-flex min-h-12 w-full items-center justify-center rounded-full px-5 text-sm font-bold transition hover:-translate-y-0.5 motion-reduce:transition-none sm:w-auto;
+  }
+
+  .primary-button {
+    @apply bg-ink text-cream shadow-[0_12px_26px_rgba(42,23,16,0.12)];
+  }
+
+  .light-button {
+    @apply border border-[rgba(41,35,29,0.15)] bg-cream/70 text-ink shadow-[0_12px_26px_rgba(42,23,16,0.12)] backdrop-blur-2xl;
+  }
+
+  .cream-button {
+    @apply bg-cream text-coffee shadow-[0_12px_26px_rgba(42,23,16,0.12)];
+  }
+
+  .hero-section {
+    @apply relative isolate grid min-h-[760px] grid-rows-[auto_1fr] lg:min-h-[92vh];
+  }
+
+  .hero-image-wrap {
+    @apply absolute inset-0 -z-20 overflow-hidden;
+  }
+
+  .hero-image {
+    @apply absolute inset-0 h-full w-full object-cover object-[64%_center] md:object-center;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(242, 238, 230, 0.94) 0%,
+        rgba(242, 238, 230, 0.88) 58%,
+        rgba(242, 238, 230, 0.68) 100%
+      ),
+      linear-gradient(90deg, rgba(242, 238, 230, 0.95), rgba(242, 238, 230, 0.34));
+  }
+
+  .site-header {
+    @apply flex w-full items-center justify-between gap-6 border-b border-[rgba(41,35,29,0.11)] bg-cream/60 px-4 py-4 backdrop-blur-xl sm:px-[max(20px,calc((100%_-_1180px)/2))] sm:py-[18px];
+  }
+
+  .brand-link {
+    @apply inline-flex items-center gap-2.5 sm:gap-3;
+  }
+
+  .brand-mark {
+    @apply h-[18px] w-[18px] rounded-full border border-coffee sm:h-5 sm:w-5;
+    background:
+      radial-gradient(circle at 42% 32%, #f3c982 0 9%, transparent 10%),
+      radial-gradient(circle at 50% 36%, #a97843 0 18%, #2b1b14 20% 100%);
+    box-shadow:
+      0 0 0 6px rgba(83, 98, 74, 0.12),
+      0 8px 16px rgba(42, 23, 16, 0.2),
+      inset 0 3px 5px rgba(255, 250, 241, 0.2),
+      inset 0 -5px 8px rgba(0, 0, 0, 0.24);
+  }
+
+  .brand-name {
+    @apply font-display text-[2rem] font-semibold text-ink sm:text-[clamp(2rem,2.6vw,2.7rem)];
+  }
+
+  .brand-byline {
+    @apply text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-moss sm:text-[0.68rem];
+  }
+
+  .nav-links {
+    @apply hidden gap-5 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[#4d5548] sm:flex md:gap-7 md:text-xs;
+  }
+
+  .nav-link {
+    @apply relative py-2 hover:text-ink focus-visible:text-ink;
+  }
+
+  .hero-content {
+    @apply mx-auto grid w-[min(1180px,calc(100%_-_28px))] justify-items-center pt-12 pb-28 text-center md:w-[min(1180px,calc(100%_-_40px))] lg:pt-[clamp(54px,8vh,84px)];
+  }
+
+  .hero-title {
+    @apply mb-5 max-w-[900px] text-[clamp(3.25rem,11vw,4.6rem)] leading-[0.96] md:max-w-[620px] lg:max-w-[900px] lg:text-[clamp(3.8rem,7vw,6.6rem)];
+  }
+
+  .hero-copy {
+    @apply mb-8 max-w-[610px] text-base font-semibold leading-[1.7] text-ink md:text-[1.16rem] md:font-normal md:text-[#4f4538];
+  }
+
+  .intro-section {
+    @apply relative mx-auto grid w-[min(1180px,calc(100%_-_28px))] gap-7 border-b border-[rgba(41,35,29,0.15)] py-[76px] md:w-[min(1180px,calc(100%_-_40px))] md:gap-11;
+  }
+
+  .intro-copy {
+    @apply mx-auto max-w-[980px] text-center font-display text-[clamp(2.4rem,4.4vw,4.7rem)] leading-none text-[#3f372e] text-balance;
+  }
+
+  .principles-grid {
+    @apply grid grid-cols-2 border-y border-[rgba(41,35,29,0.15)] bg-moss/[0.045] md:grid-cols-4;
+  }
+
+  .principle-item {
+    @apply min-w-0 border-[rgba(41,35,29,0.15)] px-2 py-4 text-center text-[0.68rem] font-bold uppercase tracking-[0.08em] text-moss md:px-3.5 md:py-[18px] md:text-xs;
+  }
+
+  .menu-grid {
+    @apply grid gap-3.5 md:grid-cols-3;
+  }
+
+  .menu-card {
+    @apply grid overflow-hidden rounded-lg border border-[rgba(41,35,29,0.15)] bg-cream/70 shadow-[0_18px_42px_rgba(42,23,16,0.16)] transition hover:-translate-y-1 motion-reduce:transition-none md:min-h-[430px] md:grid-rows-[minmax(0,1fr)_auto];
+  }
+
+  .menu-image-wrap {
+    @apply relative min-h-[230px] overflow-hidden bg-[#d7c9b3] md:min-h-[248px];
+  }
+
+  .menu-image {
+    @apply block h-full w-full object-cover brightness-[0.98] contrast-[0.96] saturate-[0.82] transition duration-500;
+  }
+
+  .menu-content {
+    @apply grid gap-4 bg-cream/90 p-5 md:min-h-[164px] md:p-6;
+  }
+
+  .approach-section {
+    @apply mx-auto grid w-[min(1180px,calc(100%_-_28px))] gap-8 border-t border-[rgba(41,35,29,0.15)] py-16 md:w-[min(1180px,calc(100%_-_40px))] md:py-22 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.7fr)] lg:gap-18;
+  }
+
+  .body-copy {
+    @apply text-base leading-[1.75] text-muted;
+  }
+
+  .brew-notes {
+    @apply grid overflow-hidden rounded-lg border border-[rgba(41,35,29,0.15)] bg-[rgba(41,35,29,0.15)] shadow-[0_18px_42px_rgba(42,23,16,0.16)];
+  }
+
+  .brew-note {
+    @apply grid gap-3 bg-cream/70 p-5 sm:grid-cols-[54px_minmax(0,1fr)];
+  }
+
+  .visit-section {
+    @apply mx-auto mb-6 grid w-[min(1180px,calc(100%_-_28px))] gap-7 rounded-lg p-6 text-cream shadow-[0_28px_70px_rgba(42,23,16,0.2)] md:w-[min(1180px,calc(100%_-_40px))] md:p-[52px] lg:flex lg:items-end lg:justify-between;
+    background:
+      radial-gradient(circle at 88% 16%, rgba(185, 130, 74, 0.32), transparent 18rem),
+      linear-gradient(145deg, #321b12, #2b1b14 60%, #170c08);
+  }
+
+  .scene-section {
+    @apply relative h-[205vh] bg-[#241a15] text-cream [--ritual-progress:0] motion-reduce:h-screen motion-reduce:min-h-[680px] md:h-[220vh];
+  }
+
+  .scene-sticky {
+    @apply sticky top-0 isolate h-screen min-h-[580px] overflow-hidden bg-[linear-gradient(135deg,#2f241c_0%,#252019_46%,#1f2a20_100%)] [perspective:1200px] md:min-h-[620px];
+  }
+
+  .scene-canvas {
+    @apply absolute inset-0 z-10 block h-full w-full drop-shadow-[0_34px_48px_rgba(0,0,0,0.34)];
+  }
+
+  .scene-glow {
+    @apply absolute inset-0 z-0 opacity-35;
+    background: linear-gradient(
+      120deg,
+      rgba(169, 120, 67, 0.08),
+      transparent 48%,
+      rgba(79, 96, 74, 0.11)
+    );
+  }
+
+  .scene-frame {
+    @apply pointer-events-none relative z-20 mx-auto h-full w-[min(1180px,calc(100%_-_28px))] md:w-[min(1180px,calc(100%_-_40px))];
+  }
+
+  .scene-heading {
+    @apply absolute top-10 left-0 md:top-[clamp(34px,7vh,74px)];
+  }
+
+  .scene-copy {
+    @apply absolute bottom-14 left-0 h-[206px] w-[min(100%,440px)] [transform-style:preserve-3d] md:bottom-[66px] md:h-[220px] lg:top-[54%] lg:bottom-auto lg:h-[250px] lg:w-[min(420px,42vw)];
+  }
+
+  .scene-stage {
+    @apply absolute inset-0 opacity-0 transition duration-500 [transform-style:preserve-3d] will-change-[opacity,transform] first:opacity-100 motion-reduce:transition-none;
+  }
+
+  .scene-progress {
+    @apply absolute bottom-6 left-0 h-0.5 w-[116px] overflow-hidden bg-cream/20 md:right-0 md:bottom-[clamp(34px,6vh,64px)] md:left-auto;
+  }
+}
