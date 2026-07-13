@@ -40,7 +40,7 @@ export function VisitSection() {
     >
       <div>
         <Eyebrow className="text-cream/70">Opening soon in Bengaluru</Eyebrow>
-        <h2 id="visit-title" className="section-title max-w-[760px] text-cream">
+        <h2 id="visit-title" className="visit-title">
           A warm counter, a few seats, and a slower cup.
         </h2>
         <p className="mt-5 max-w-[620px] text-base leading-[1.7] text-cream/70">
