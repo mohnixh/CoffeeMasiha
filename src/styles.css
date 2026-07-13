@@ -256,6 +256,22 @@
       linear-gradient(145deg, #321b12, #2b1b14 60%, #170c08);
   }
 
+  .visit-actions {
+    @apply grid gap-4 sm:flex sm:items-center sm:justify-between lg:grid lg:justify-items-end;
+  }
+
+  .social-links {
+    @apply flex items-center justify-center gap-2 sm:justify-end;
+  }
+
+  .social-link {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/15 bg-cream/8 text-cream/78 transition hover:-translate-y-0.5 hover:border-cream/35 hover:bg-cream/14 hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber motion-reduce:transition-none;
+  }
+
+  .social-link svg {
+    @apply h-[18px] w-[18px] fill-current;
+  }
+
   .scene-section {
     @apply relative h-[235vh] bg-[#241a15] text-cream [--photo-drift:0px] [--ritual-progress:0] motion-reduce:h-screen motion-reduce:min-h-[760px] md:h-[250vh];
   }
