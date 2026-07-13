@@ -21,11 +21,8 @@ export function MenuSection() {
               />
             </div>
             <div className="menu-content">
-              <div className="grid gap-1 sm:flex sm:items-baseline sm:justify-between sm:gap-4">
+              <div className="grid gap-1">
                 <h3 className="text-[2rem] leading-none">{item.name}</h3>
-                <span className="shrink-0 text-xs font-extrabold uppercase tracking-[0.06em] text-moss">
-                  {item.price}
-                </span>
               </div>
               <p className="text-base leading-[1.65] text-muted">{item.note}</p>
             </div>
