@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoffeeMasiha by Mohnish</title>
+    <meta name="theme-color" content="#f6f0e7" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="index, follow" />
     <meta
       name="description"
       content="A cosy minimal coffee shop for black coffee, cold brew, AeroPress, and water-led brewing."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://coffeemasiha.com/" />
+    <link rel="canonical" href="https://www.coffeemasiha.com/" />
+    <meta property="og:url" content="https://www.coffeemasiha.com/" />
     <meta property="og:title" content="CoffeeMasiha by Mohnish" />
     <meta
       property="og:description"
@@ -17,7 +21,13 @@
     />
     <meta
       property="og:image"
-      content="https://coffeemasiha.com/coffee-ritual.png"
+      content="https://www.coffeemasiha.com/og-coffee-masiha.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Black coffee, cold brew, and an AeroPress on a warm coffee counter"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CoffeeMasiha by Mohnish" />
@@ -27,7 +37,19 @@
     />
     <meta
       name="twitter:image"
-      content="https://coffeemasiha.com/coffee-ritual.png"
+      content="https://www.coffeemasiha.com/og-coffee-masiha.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Black coffee, cold brew, and an AeroPress on a warm coffee counter"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/coffee-ritual.webp"
+      imagesrcset="/coffee-ritual-960.webp 960w, /coffee-ritual.webp 1536w"
+      imagesizes="100vw"
+      type="image/webp"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +58,19 @@
       rel="stylesheet"
     />
     <link rel="icon" href="/favicon.svg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CoffeeMasiha by Mohnish",
+        "url": "https://www.coffeemasiha.com/",
+        "logo": "https://www.coffeemasiha.com/favicon.svg",
+        "image": "https://www.coffeemasiha.com/og-coffee-masiha.jpg",
+        "description": "A cosy minimal coffee shop for black coffee, cold brew, AeroPress, and water-led brewing.",
+        "email": "mohdmohnish01@gmail.com",
+        "sameAs": ["https://www.instagram.com/mohnixh_/"]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

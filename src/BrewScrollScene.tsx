@@ -34,6 +34,7 @@ export default function BrewScrollScene() {
 
     // Three.js needs a renderer, a scene, and a camera.
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const prefersReducedMotion = reduceMotion.matches;
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
@@ -151,6 +152,7 @@ export default function BrewScrollScene() {
 
     // These values update as the user scrolls through the section.
     let frame = 0;
+    let isVisible = false;
     let scrollProgress = 0;
     let currentProgress = 0;
     let lastTime = performance.now();
@@ -175,9 +177,10 @@ export default function BrewScrollScene() {
     };
 
     const render = (time: number) => {
+      frame = 0;
       const delta = Math.min((time - lastTime) / 1000, 0.05);
       lastTime = time;
-      const target = reduceMotion.matches ? 0.52 : scrollProgress;
+      const target = prefersReducedMotion ? 0 : scrollProgress;
       currentProgress += (target - currentProgress) * Math.min(1, delta * 6.5);
 
       const p = currentProgress;
@@ -197,7 +200,7 @@ export default function BrewScrollScene() {
       const scale = (window.innerWidth < 760 ? 0.52 : 0.68) + lift * 0.035;
       cup.scale.setScalar(scale);
 
-      const elapsed = time * 0.001;
+      const elapsed = prefersReducedMotion ? 0 : time * 0.001;
       steamLines.forEach((line) => {
         line.position.y = Math.sin(elapsed * 0.55 + line.userData.phase) * 0.045;
         (line.material as THREE.LineBasicMaterial).opacity =
@@ -219,18 +222,39 @@ export default function BrewScrollScene() {
       section.style.setProperty("--ritual-progress", p.toFixed(4));
       section.style.setProperty("--photo-drift", `${(p * 28).toFixed(2)}px`);
       renderer.render(scene, camera);
-      frame = requestAnimationFrame(render);
+      if (!prefersReducedMotion && isVisible) {
+        frame = requestAnimationFrame(render);
+      }
     };
 
     const onScroll = () => updateScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", resize);
     resize();
-    frame = requestAnimationFrame(render);
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !prefersReducedMotion && frame === 0) {
+          lastTime = performance.now();
+          frame = requestAnimationFrame(render);
+        } else if (!isVisible && frame !== 0) {
+          cancelAnimationFrame(frame);
+          frame = 0;
+        }
+      },
+      { rootMargin: "120px 0px" },
+    );
+    visibilityObserver.observe(section);
+
+    if (prefersReducedMotion) {
+      render(performance.now());
+    }
 
     return () => {
       // Clean up the animation and all Three.js objects when React unmounts.
       cancelAnimationFrame(frame);
+      visibilityObserver.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
       scene.traverse((object) => {
@@ -260,6 +284,10 @@ export default function BrewScrollScene() {
               src={image.src}
               alt=""
               key={image.src}
+              width="960"
+              height="640"
+              loading="lazy"
+              decoding="async"
               style={{ "--photo-index": index } as React.CSSProperties}
             />
           ))}
