@@ -13,12 +13,22 @@ export function Hero() {
       aria-label="CoffeeMasiha by Mohnish introduction"
     >
       <div className="hero-image-wrap" aria-hidden="true">
-        <img
-          src="/coffee-ritual.png"
-          alt=""
-          className="hero-image"
-          fetchPriority="high"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet="/coffee-ritual-960.webp 960w, /coffee-ritual.webp 1536w"
+            sizes="100vw"
+          />
+          <img
+            src="/coffee-ritual.jpg"
+            alt=""
+            className="hero-image"
+            width="1536"
+            height="1024"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="hero-overlay" />
       </div>
 
@@ -48,7 +58,10 @@ export function Hero() {
         <p className="hero-copy">
           No milk. No sugar. Only water, patience, and the quiet fate of the bean.
         </p>
-        <div className="flex w-full flex-wrap justify-center gap-3 sm:w-auto" aria-label="Primary actions">
+        <div
+          className="flex w-full flex-wrap items-center justify-center gap-3 sm:w-auto"
+          aria-label="Primary actions"
+        >
           <ButtonLink href="#menu">See the menu</ButtonLink>
           <ButtonLink href="#visit" className="light-button">
             Join opening list

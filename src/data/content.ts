@@ -34,7 +34,7 @@ export const brewNotes = [
 
 export const ritualImages = [
   {
-    src: "/coffee-ritual.png",
+    src: "/coffee-ritual-960.webp",
     alt: "A quiet counter with black coffee, cold brew, AeroPress, and water",
   },
   {

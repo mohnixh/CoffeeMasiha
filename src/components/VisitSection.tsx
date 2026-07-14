@@ -9,20 +9,6 @@ const socials = [
     ),
   },
   {
-    href: "https://www.facebook.com/coffeemasiha/",
-    label: "Facebook",
-    icon: (
-      <path d="M14 8.6V6.9c0-.8.5-1 1.1-1H17V2.6A24.5 24.5 0 0 0 14.2 2c-2.8 0-4.7 1.7-4.7 4.8v1.8H6.4v3.7h3.1V22H14v-9.7h3.1l.5-3.7H14Z" />
-    ),
-  },
-  {
-    href: "https://x.com/coffeemasiha",
-    label: "X",
-    icon: (
-      <path d="M17.7 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.3L5.4 21H2.3l7.3-8.3L2 3h6.4l4.4 5.8L17.7 3Zm-1.1 16.2h1.7L7.5 4.7H5.7l10.9 14.5Z" />
-    ),
-  },
-  {
     href: "mailto:mohdmohnish01@gmail.com",
     label: "Email",
     icon: (
