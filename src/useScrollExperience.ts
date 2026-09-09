@@ -10,7 +10,6 @@ export function useScrollExperience() {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     let sections: HTMLElement[] = [];
-    let words: HTMLElement[] = [];
     let chapters: HTMLElement[] = [];
     const progress = document.querySelector<HTMLElement>(".reading-progress");
     let lenis: Lenis | undefined;
@@ -32,10 +31,6 @@ export function useScrollExperience() {
         section.style.setProperty("--p", reduced ? "0" : pinned.toFixed(4));
         if (section.classList.contains("hero-scroll")) {
           section.style.setProperty("--recede", reduced ? "0" : smooth((pinned - .08) / .75).toFixed(4));
-        }
-        if (section.classList.contains("manifesto")) {
-          const reveal = reduced ? 1 : clamp((height * .8 - rect.top) / (rect.height * .65));
-          words.forEach((word, i) => word.classList.toggle("lit", reveal > i / words.length));
         }
         if (section.classList.contains("ritual")) {
           const stage = Math.min(2, Math.floor(pinned * 3));
@@ -83,7 +78,6 @@ export function useScrollExperience() {
     }, { threshold: .1 });
     const refresh = () => {
       sections = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll]"));
-      words = Array.from(document.querySelectorAll<HTMLElement>("[data-word]"));
       chapters = Array.from(document.querySelectorAll<HTMLElement>(".ritual-chapter"));
       document.querySelectorAll("[data-reveal]:not(.revealed)").forEach(element => revealObserver.observe(element));
       schedule();
@@ -108,7 +102,19 @@ export function useScrollExperience() {
     preference.addEventListener("change", configure);
     refresh();
     configure();
+    let cancelled = false;
+    let anchorFrame = 0;
+    // Initial section links resolve after font loading establishes the layout.
+    if (window.location.hash) void document.fonts.ready.then(() => {
+      if (cancelled) return;
+      anchorFrame = requestAnimationFrame(() => {
+        document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "instant" });
+        schedule();
+      });
+    });
     return () => {
+      cancelled = true;
+      cancelAnimationFrame(anchorFrame);
       lenis?.destroy();
       cancelAnimationFrame(frame);
       revealObserver.disconnect();

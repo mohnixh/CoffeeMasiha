@@ -6,12 +6,9 @@ import { VisitSection } from "./components/VisitSection";
 import BrewScrollScene from "./BrewScrollScene";
 import { CursorGlow } from "./components/CursorGlow";
 import { useScrollExperience } from "./useScrollExperience";
-import { DreamExperiment } from "./components/DreamExperiment";
-import { ThemeExperiments, useThemeExperiment } from "./components/ThemeExperiments";
 
 export default function App() {
   useScrollExperience();
-  const { palette, selectPalette, showStudio } = useThemeExperiment();
   return (
     <>
       <a className="skip-link" href="#dream">Skip to the story</a>
@@ -19,13 +16,12 @@ export default function App() {
       <CursorGlow />
       <main>
         <Hero />
-        {palette ? <DreamExperiment /> : <Intro />}
+        <Intro />
         <BrewScrollScene />
         <MenuSection />
         <ApproachSection />
         <VisitSection />
       </main>
-      {palette && showStudio && <ThemeExperiments palette={palette} onSelect={selectPalette} />}
     </>
   );
 }
