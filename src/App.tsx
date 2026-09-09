@@ -1,23 +1,31 @@
-import { lazy, Suspense } from "react";
 import { ApproachSection } from "./components/ApproachSection";
 import { Hero } from "./components/Hero";
 import { Intro } from "./components/Intro";
 import { MenuSection } from "./components/MenuSection";
 import { VisitSection } from "./components/VisitSection";
-
-const BrewScrollScene = lazy(() => import("./BrewScrollScene"));
+import BrewScrollScene from "./BrewScrollScene";
+import { CursorGlow } from "./components/CursorGlow";
+import { useScrollExperience } from "./useScrollExperience";
+import { DreamExperiment } from "./components/DreamExperiment";
+import { ThemeExperiments, useThemeExperiment } from "./components/ThemeExperiments";
 
 export default function App() {
+  useScrollExperience();
+  const { palette, selectPalette, showStudio } = useThemeExperiment();
   return (
-    <main className="overflow-x-clip">
-      <Hero />
-      <Intro />
-      <Suspense fallback={<section className="h-screen min-h-[580px] bg-[#241a15]" />}>
+    <>
+      <a className="skip-link" href="#dream">Skip to the story</a>
+      <div className="reading-progress" aria-hidden="true" />
+      <CursorGlow />
+      <main>
+        <Hero />
+        {palette ? <DreamExperiment /> : <Intro />}
         <BrewScrollScene />
-      </Suspense>
-      <MenuSection />
-      <ApproachSection />
-      <VisitSection />
-    </main>
+        <MenuSection />
+        <ApproachSection />
+        <VisitSection />
+      </main>
+      {palette && showStudio && <ThemeExperiments palette={palette} onSelect={selectPalette} />}
+    </>
   );
 }

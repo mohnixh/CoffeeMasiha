@@ -1,0 +1,145 @@
+/* Espresso is the selected design; ?theme=original retains the green version. */
+html[data-palette="espresso"] { --paper: #efe0c8; --ink: #352319; --dark: #281b16; --accent: #8b512e; --soft: #dfc9aa; --muted: #72543e; --light: #fff2df; --highlight: #d8ad77; }
+html[data-palette="terracotta"] { --paper: #f4e5d6; --ink: #4b2d25; --dark: #61392e; --accent: #a44830; --soft: #e9cbb7; --muted: #805a4c; --light: #fff0df; --highlight: #efb59a; }
+html[data-palette="midnight"] { --paper: #e9edf0; --ink: #24384d; --dark: #192c42; --accent: #426589; --soft: #d2dce5; --muted: #53677b; --light: #f2f2ed; --highlight: #b6cbdc; }
+html[data-palette="burgundy"] { --paper: #f2e5e4; --ink: #442631; --dark: #42212e; --accent: #90475a; --soft: #e3cbd0; --muted: #795360; --light: #fff0eb; --highlight: #dcacb9; }
+html[data-palette="graphite"] { --paper: #eeede8; --ink: #292826; --dark: #262626; --accent: #65615c; --soft: #d9d7d0; --muted: #69655e; --light: #f6f4ee; --highlight: #c9c5ba; }
+html[data-palette] { background: var(--paper); color: var(--ink); --line: color-mix(in srgb,var(--ink) 20%,transparent); }
+[data-palette] ::selection { background: var(--accent); color: var(--light); }
+[data-palette] :is(a,button):focus-visible { outline-color: var(--accent); }
+[data-palette] :is(.hero,.ritual,.dream-footer) :is(a,button):focus-visible { outline-color: var(--highlight); }
+[data-palette] :is(.manifesto,.cups,.brew-dialog,.skip-link) { background: var(--paper); color: var(--ink); }
+[data-palette] :is(.hero-scroll,.hero-scroll .hero,.ritual,.dream-footer) { background: var(--dark); color: var(--light); }
+[data-palette] .ritual-sticky { background: radial-gradient(ellipse at 80% 35%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 60%),var(--dark); }
+[data-palette] .hero-contours svg { stroke: var(--highlight); }
+[data-palette] .hero-orbit-type { color: var(--highlight); }
+[data-palette] .hero-orbit-type span:nth-child(2) { -webkit-text-stroke-color: color-mix(in srgb,var(--highlight) 65%,transparent); }
+[data-palette] .hero-visual-shade { background: linear-gradient(90deg,color-mix(in srgb,var(--dark) 65%,transparent),transparent 78%),linear-gradient(0deg,color-mix(in srgb,var(--dark) 45%,transparent),transparent 55%); }
+[data-palette] .hero-scroll .hero-photo img { filter: saturate(.45) brightness(.86); }
+[data-palette] :is(.hero h1 em,.footer-main h2 em) { color: var(--highlight); }
+[data-palette] .hero-bottom p { color: var(--light); }
+[data-palette] .status-dot { background: var(--highlight); box-shadow: 0 0 0 5px color-mix(in srgb,var(--highlight) 10%,transparent); }
+[data-palette] .reading-progress { background: var(--highlight); }
+[data-palette] .ritual-shade { background: repeating-radial-gradient(ellipse at 20% 60%,transparent 0,transparent 100px,color-mix(in srgb,var(--highlight) 20%,transparent) 101px,transparent 102px); }
+[data-palette] .ritual-type { -webkit-text-stroke-color: color-mix(in srgb,var(--highlight) 25%,transparent); }
+[data-palette] .ritual-chapter h2 { text-shadow: 0 2px 30px var(--dark); }
+[data-palette] :is(.ritual-chapter > p:last-child,.footer-note p) { color: color-mix(in srgb,var(--light) 85%,var(--dark)); }
+[data-palette] :is(.handwritten,.cups-heading h2 em,.cup-mood,.values-strip i,.brew-content > .eyebrow,.brew-source,.brew-finished,.brew-timer button) { color: var(--accent); }
+[data-palette] :is(.cups-heading > p,.cup-note,.collection-note,.cup-footer,.brew-intro,.brew-facts dt,.brew-prep li,.brew-prep p,.brew-steps p,.brew-method-heading > span,.brew-footnote,.brew-timer .timer-reset) { color: var(--muted); }
+[data-palette] :is(.signature,.cup-footer > span:last-child,.back-collection) { color: var(--ink); }
+[data-palette] :is(.temperature-tabs,.brew-close,.step-check,.brew-timer) { border-color: var(--line); }
+[data-palette] .temperature-tabs button { color: var(--muted); }
+[data-palette] :is(.temperature-tabs button[aria-pressed="true"],.step-done .step-check,.brew-close:hover) { background: var(--dark); color: var(--light); }
+[data-palette] :is(.daydream,.brew-tip,.cup-photo) { background: var(--soft); }
+[data-palette] .daydream-overlay { background: linear-gradient(0deg,color-mix(in srgb,var(--dark) 75%,transparent),color-mix(in srgb,var(--dark) 10%,transparent)); }
+[data-palette] .brew-close { background: var(--paper); color: var(--ink); }
+[data-palette] .brew-close:hover { background: var(--dark); color: var(--light); }
+[data-palette] .step-check { color: var(--accent); }
+[data-palette] .brew-completion { background: var(--soft); }
+[data-palette] .brew-completion > i { background: var(--accent); }
+[data-palette] .brew-dialog-scroll { scrollbar-color: var(--accent) var(--paper); }
+[data-palette] .brew-dialog::backdrop { background: color-mix(in srgb,var(--dark) 85%,transparent); }
+[data-palette] .brew-cover::after { background: linear-gradient(180deg,color-mix(in srgb,var(--dark) 25%,transparent),transparent 30%,color-mix(in srgb,var(--dark) 80%,transparent)); }
+[data-palette] .cursor-glow { background: radial-gradient(circle,color-mix(in srgb,var(--highlight) 28%,transparent),color-mix(in srgb,var(--highlight) 12%,transparent) 30%,transparent 70%); }
+
+/* A personal letter beside an architectural daydream, drawn in the page. */
+.dream-experiment { overflow: hidden; padding-top: 60px; padding-bottom: 80px; }
+.dream-experiment .section-kicker { padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+.dream-composition { display: grid; grid-template-columns: 1.5fr 1fr; align-items: center; gap: 6vw; margin: 64px 0 70px; }
+.dream-letter { position: relative; padding-left: 32px; }
+.dream-quotation { position: absolute; font: 95px/1 var(--font-display); top: -8px; left: -10px; color: var(--accent); }
+.dream-letter h2 { font-size: clamp(40px,4.3vw,72px); line-height: 1.08; letter-spacing: -.035em; }
+.dream-opening { display: block; color: var(--muted); font-size: .67em; line-height: 1.16; margin-bottom: 30px; letter-spacing: -.015em; }
+.dream-personal em { color: var(--accent); }
+.dream-drawing { position: relative; width: 100%; max-width: 450px; justify-self: center; }
+.dream-drawing svg { display: block; width: 100%; height: auto; stroke: var(--highlight); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; transform: translateY(calc((var(--travel,.5) - .5) * -35px)); }
+.sketch-wall { fill: var(--dark); stroke: none; }
+.sketch-wall-start { stop-color: color-mix(in srgb,var(--dark) 72%,var(--accent)); }
+.sketch-wall-end { stop-color: var(--dark); }
+.sketch-sun-start { stop-color: var(--highlight); }
+.sketch-sun-end { stop-color: var(--accent); }
+.sketch-coffee { fill: var(--dark); stroke: none; }
+.sketch-outer-frame { stroke: var(--accent); opacity: .35; stroke-width: .6; }
+.sketch-sun { fill: var(--accent); stroke: none; }
+.sketch-light { fill: var(--highlight); opacity: .09; stroke: none; }
+.sketch-cup { fill: var(--paper); stroke: var(--paper); }
+.sketch-frame { stroke: var(--accent); stroke-width: 1; }
+.dream-drawing .sketch-dimension { stroke: var(--accent); opacity: .45; stroke-width: .7; }
+.dream-orbit { position: absolute; inset: 8% -9% 11%; border: 1px solid var(--line); border-radius: 50%; transform: rotate(-25deg) scaleX(.92); }
+.dream-drawing-mark { position: absolute; bottom: -3%; right: -3%; color: var(--accent); font: italic 74px/1 var(--font-display); }
+.sketch-steam { animation: dream-steam 5s ease-in-out infinite; }
+.dream-postscript { display: grid; grid-template-columns: 1.5fr 1fr; gap: 6vw; border-top: 1px solid var(--line); padding-top: 35px; align-items: center; }
+.dream-signoff { display: flex; align-items: center; gap: 25px; padding-left: 32px; }
+.dream-signoff .bean-mark { color: var(--accent); width: 23px; height: 35px; }
+.dream-signoff .handwritten { font-size: clamp(26px,2.8vw,43px); }
+.dream-postscript > p { font-size: 12px; line-height: 1.9; color: var(--muted); max-width: 350px; }
+.dream-postscript .signature { font-family: var(--font-display); font-size: 23px; font-style: italic; margin-top: 14px; }
+/* Selected espresso finish: luminous paper, roasted shadows, copper hairlines. */
+[data-palette="espresso"] .dream-experiment { background: radial-gradient(ellipse at 15% 10%,#fff6e58c,transparent 55%),radial-gradient(ellipse at 100% 90%,#bd824c16,transparent 60%),var(--paper); }
+[data-palette="espresso"] .dream-experiment .section-kicker { border-bottom-color: #8b512e45; }
+[data-palette="espresso"] .dream-postscript { border-top-color: #8b512e45; }
+[data-palette="espresso"] .dream-letter h2 { text-wrap: pretty; }
+[data-palette="espresso"] .sketch-wall { fill: url(#dream-wall); }
+[data-palette="espresso"] .sketch-sun { fill: url(#dream-sun); opacity: .86; }
+[data-palette="espresso"] .dream-drawing svg { filter: drop-shadow(0 25px 20px #49270e13); }
+[data-palette="espresso"] .dream-drawing .sketch-frame { stroke: #bc8b50; }
+[data-palette="espresso"] .dream-orbit { border-color: #8b512e26; }
+[data-palette="espresso"] :is(.hero-scroll,.hero-scroll .hero) { background: radial-gradient(ellipse at 72% 25%,#533722 0,transparent 70%),var(--dark); }
+[data-palette="espresso"] .hero-scroll .hero-photo img { filter: saturate(.8) brightness(.86); }
+[data-palette="espresso"] .hero-visual::after { content: ""; position: absolute; z-index: 2; inset: 10px; border: 1px solid #e8bf823d; border-radius: calc(var(--recede) * 12px); opacity: var(--recede); pointer-events: none; }
+[data-palette="espresso"] .ritual-sticky { background: radial-gradient(ellipse at 75% 35%,#855b3038,transparent 65%),#281b16; }
+[data-palette="espresso"] .ritual-image { outline: 1px solid #b5854c55; outline-offset: 6px; box-shadow: 0 35px 90px #100a0866; }
+[data-palette="espresso"] .cup-photo { border-radius: 5px; }
+[data-palette="espresso"] .cup-photo::before { content: ""; position: absolute; z-index: 1; inset: 8px; border: 1px solid #ffe4b52b; pointer-events: none; }
+[data-palette="espresso"] .cup-footer { border-top-color: #8b512e40; }
+[data-palette="espresso"] .dream-footer { background: radial-gradient(ellipse at 85% 95%,#6f432432,transparent 60%),var(--dark); }
+[data-palette="espresso"] .footer-wordmark { color: #e9d2b0; }
+[data-palette="espresso"] .brew-tip { background: linear-gradient(120deg,#e2c9a3,#e8d5b9); border-left: 2px solid #a67443; }
+@keyframes dream-steam { 50% { opacity: .35; transform: translateY(-8px); } }
+
+/* Review controls appear only on a theme URL and collapse out of the way. */
+.theme-studio { position: fixed; bottom: 18px; right: 18px; z-index: 90; width: min(510px,calc(100vw - 36px)); padding: 0 18px; background: #faf8f2f5; color: #302d29; border: 1px solid #302d2925; border-radius: 14px; box-shadow: 0 10px 45px #0002; backdrop-filter: blur(20px); font-family: var(--font-sans); }
+.theme-studio:not(.is-expanded) { width: 245px; }
+.theme-studio-toggle { border: 0; background: transparent; color: inherit; padding: 16px 0; width: 100%; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; font-size: 11px; text-align: left; }
+.theme-studio-toggle > span:first-child { display: flex; align-items: center; gap: 9px; }
+.theme-studio-toggle b { font-weight: 500; color: #736d63; }
+.theme-live-dot { height: 8px; width: 8px; border-radius: 50%; background: var(--accent); }
+.theme-studio-note { font-size: 10px; color: #736d63; padding-bottom: 15px; }
+.theme-swatches { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 8px; }
+.theme-swatches button { padding: 4px; background: transparent; color: #302d29; border: 1px solid transparent; border-radius: 6px; cursor: pointer; }
+.theme-swatches button[aria-pressed="true"] { border-color: #302d29; background: #e9e5dc; }
+.theme-swatch-colors { height: 31px; display: flex; border-radius: 3px; overflow: hidden; }
+.theme-swatch-colors i { flex: 1; }
+.theme-swatch-colors i:first-child { flex: 1.5; }
+.theme-swatch-label { display: flex; gap: 3px; padding: 8px 0 3px; font-size: 8px; }
+.theme-swatch-label b { font-weight: 500; }
+.theme-studio-footer { display: flex; justify-content: space-between; gap: 15px; padding: 16px 0; font-size: 10px; }
+.theme-studio-footer a { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .dream-composition { grid-template-columns: 1.25fr 1fr; gap: 25px; }
+  .dream-letter { padding-left: 20px; }
+  .dream-letter h2 { font-size: 42px; }
+  .dream-signoff { padding-left: 0; gap: 15px; }
+  .dream-signoff .handwritten { font-size: 29px; }
+  .dream-postscript { gap: 35px; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .dream-experiment { padding-top: 40px; padding-bottom: 55px; }
+  .dream-composition { grid-template-columns: 1fr; gap: 35px; margin: 40px 0; }
+  .dream-letter { padding-left: 23px; }
+  .dream-letter h2 { font-size: clamp(38px,9.6vw,55px); }
+  .dream-quotation { font-size: 75px; left: -7px; }
+  .dream-opening { font-size: .68em; margin-bottom: 24px; }
+  .dream-drawing { width: 78%; max-width: 310px; }
+  .dream-postscript { grid-template-columns: 1fr; gap: 25px; padding-top: 30px; }
+  .dream-postscript > p { padding-left: 35px; }
+  .dream-signoff .handwritten { font-size: 29px; }
+  .dream-drawing-mark { font-size: 57px; }
+  .theme-studio { right: 10px; bottom: 10px; width: calc(100vw - 20px); padding: 0 12px; }
+  .theme-swatches { gap: 3px; }
+  .theme-swatch-label { flex-direction: column; align-items: flex-start; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dream-drawing svg { transform: none; }
+  .sketch-steam { animation: none; }
+}

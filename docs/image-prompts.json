@@ -1,0 +1,106 @@
+{
+  "mode": "Built-in image_gen",
+  "date": "2026-09-09",
+  "assets": [
+    {
+      "id": "hot-americano",
+      "path": "public/coffee/hot-americano.jpg",
+      "prompt": "Use case: photorealistic-natural. Create one portrait editorial photograph for CoffeeMasiha coffee website, 1024x1536. Subject: hot Americano, a generous dark black coffee in a handmade matte olive green ceramic cup with handle, no crema except tiny dark bubbles at edges, gently rising steam, close portrait 3/4 view. Warm muted limestone table, late afternoon window light from left, soft dark olive background, rich restrained natural colors, realistic texture, beautiful specialty coffee magazine photography, shallow depth of field. Cup fully in frame with breathing room, centered in lower two thirds, no writing, no logos, no people, no collage. Absolutely no milk, sugar, cream, syrups, garnish or food. This is a single standalone photograph, not a website mockup."
+    },
+    {
+      "id": "long-black",
+      "path": "public/coffee/long-black.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a small white porcelain cup of long black coffee, glossy dark surface with a thin natural espresso crema, overhead view on dark walnut, sunlight making an oval shadow"
+    },
+    {
+      "id": "espresso",
+      "path": "public/coffee/espresso.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a tiny dark brown ceramic espresso demitasse containing one small shot with golden natural coffee crema, saucer, dramatic side light on dark stone, close low angle"
+    },
+    {
+      "id": "ristretto",
+      "path": "public/coffee/ristretto.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: one very small ristretto shot in a clear thick-bottom espresso glass, deep dark coffee and thin copper crema, close macro, light travertine surface, olive background"
+    },
+    {
+      "id": "pour-over",
+      "path": "public/coffee/pour-over.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a ceramic ribbed cone coffee dripper with white paper filter sitting correctly on a clear glass server half filled with black coffee, slim gooseneck kettle pouring a thin stream of water onto grounds, sunlit limestone"
+    },
+    {
+      "id": "chemex",
+      "path": "public/coffee/chemex.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a recognizable hourglass glass pour-over coffee carafe with polished wooden collar and leather tie, thick folded paper filter in top, dark coffee in lower glass, alone on warm oak, graceful side view"
+    },
+    {
+      "id": "aeropress",
+      "path": "public/coffee/aeropress.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a correctly assembled upright transparent smoky cylindrical AeroPress brewer over a sturdy ceramic mug, dark coffee inside, side close-up of pressing setup without hands, golden morning light on limestone"
+    },
+    {
+      "id": "french-press",
+      "path": "public/coffee/french-press.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a tall classic glass French press with matte dark metal lid and plunger and coarse dark brewed coffee inside, plunger halfway down, adjacent small black coffee cup, warm wooden surface"
+    },
+    {
+      "id": "moka-pot",
+      "path": "public/coffee/moka-pot.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a classic small octagonal silver stovetop moka pot with lid open showing brewed dark coffee in upper chamber, a small empty ceramic cup nearby, warm rustic stone surface, side angle"
+    },
+    {
+      "id": "turkish",
+      "path": "public/coffee/turkish.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: traditional hammered copper cezve with long brass handle, small patterned porcelain cup of dark Turkish coffee with natural fine coffee foam, no food, muted olive linen and dark walnut"
+    },
+    {
+      "id": "iced-americano",
+      "path": "public/coffee/iced-americano.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: tall straight clear glass of iced Americano, translucent dark amber black coffee over distinct large clear ice cubes, condensation, dark green coaster on pale limestone, bright side light"
+    },
+    {
+      "id": "cold-brew",
+      "path": "public/coffee/cold-brew.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: short rounded clear glass filled with deep brown cold brew and one large sphere of clear ice, condensation, beside a small plain dark glass cold brew bottle with no label, dark walnut surface"
+    },
+    {
+      "id": "japanese-iced",
+      "path": "public/coffee/japanese-iced.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: clear glass pour-over server with angular handle containing freshly brewed black iced coffee and visible ice cubes, a white ceramic dripper set beside it, fresh morning light, muted stone and olive background"
+    },
+    {
+      "id": "iced-aeropress",
+      "path": "public/coffee/iced-aeropress.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: low faceted clear glass with black iced coffee and irregular clear ice cubes, an upright smoky AeroPress resting beside it as brewing equipment, warm grey stone, golden late afternoon light"
+    },
+    {
+      "id": "sparkling-espresso",
+      "path": "public/coffee/sparkling-espresso.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: a tall narrow crystal highball glass with transparent unsweetened sparkling water and ice below, fresh dark espresso swirling naturally down from top into the clear sparkling water, subtle fine carbonation, no fruit garnish, olive and cream backdrop"
+    },
+    {
+      "id": "nitro-cold-brew",
+      "path": "public/coffee/nitro-cold-brew.jpg",
+      "prompt": "Use case: photorealistic-natural. One standalone portrait editorial coffee photograph, 1024x1536, for the CoffeeMasiha collection. Beautiful realistic specialty coffee magazine photography, warm muted olive and cream palette, natural texture, carefully controlled window light, shallow depth of field, subject fully in frame centered in lower two thirds with breathing room. No text, brands, logos, people, collage, milk, sugar, cream, syrups, sweeteners, garnish or food. Natural espresso crema is permitted and must look like coffee, not milk foam. Subject: clear rounded pint glass of very dark nitro cold brew with a thin dense natural tan nitrogen microfoam head and delicate cascading bubbles below, no ice, no milk, no cream, moody walnut counter and warm sidelight"
+    },
+    {
+      "id": "dream-interior",
+      "path": "public/dream-interior.jpg",
+      "prompt": "One wide cinematic editorial architectural photograph, 1536x1024. An intimate imagined coffee space: beautifully imperfect warm limestone counter, two olive green stools, a tiny round walnut table and chair beside a large window with sheer linen, warm raking morning sun, soft shadows from a plant, very simple tasteful coffee brewing equipment far back. No people, no cups as main subject, no food, no lettering, no logos. Quiet lived-in material realism, olive green and cream palette, dark walnut details, premium independent coffee magazine photography, horizontal composition. It must look like a space to linger, not a commercial chain cafe. Photorealistic-natural."
+    },
+    {
+      "id": "ritual-water",
+      "path": "public/ritual-water.jpg",
+      "prompt": "One wide cinematic close-up photograph, 1536x1024. Thin clear water stream falling from a matte black gooseneck kettle into a clear glass carafe of pure water on warm limestone, beautiful reflections and droplets, kettle spout visible upper right, rich dark olive out-of-focus background, golden light from left. Only water, no coffee beans, no milk, no sugar, no food, no text, no people. Subject on right two thirds leaving dark negative space on left for website text. Extremely realistic premium editorial photography."
+    },
+    {
+      "id": "hero-coffee-v2",
+      "path": "public/hero-coffee-v2.jpg",
+      "prompt": "Use case photorealistic-natural. Create one premium cinematic landscape editorial photograph for a coffee brand's opening screen, 1536x1024. A single beautiful handcrafted low wide dark olive ceramic cup of deep black coffee on a substantial sculptural warm travertine plinth, viewed in three-quarter close-up from slightly above so the rich dark coffee surface is visible. Cup is positioned in right-center of a very wide composition, fully visible, small handle, a delicate wisp of real steam caught by light. A folded soft olive linen cloth near the cup. A few coffee beans placed casually near bottom right. Background is an atmospheric dark warm olive plaster wall and shadowed stone, with dramatic but soft golden early morning raking light from upper left, lots of rich dark negative space on the left 45% for cream typography. Sensuous ceramic imperfections, palpable warm stone texture, fine editorial grain, sophisticated luxury still-life art direction. Photography with a medium format camera, realistic shallow depth of field. No AeroPress, no glass of iced coffee, no big equipment tower, no text, no logos, no people, no milk, no cream, no sugar, no latte art. A single intentional coffee composition, not a collage or website mockup."
+    },
+    {
+      "id": "ritual-bloom-v2",
+      "path": "public/ritual-bloom-v2.jpg",
+      "prompt": "Use case photorealistic-natural. Create one premium cinematic landscape editorial coffee photograph, 1536x1024, designed as a companion image to a dark olive ceramic black coffee cup on warm travertine. Subject: the patient act of pour-over brewing. A handmade matte olive ceramic ribbed cone dripper with a realistic white paper filter, resting correctly on a thick-walled clear glass server, freshly ground coffee blooming dark and golden inside the paper filter while a thin stream of hot water enters from the spout of a tasteful brass gooseneck kettle from the upper right, kettle itself mostly out of frame. Three-quarter slightly elevated angle to see the wet grounds and the black brewed coffee in the glass below, equipment on right 55% of image, generous dark warm olive negative space on the left for text. Warm travertine counter, folded olive linen, subtle steam, the same golden raking window light from upper left, rich dark background, realistic coffee detail, beautiful premium medium-format editorial still-life. No AeroPress, no plastic equipment tower, no suspended impossible brewer, no milk, no cream, no sugar, no food, no logos, no writing, no people. One coherent physical scene, not a collage."
+    }
+  ]
+}

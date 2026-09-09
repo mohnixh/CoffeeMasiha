@@ -1,34 +1,28 @@
-import { menu } from "../data/content";
-import { SectionHeading } from "./ui";
+import { useState } from "react";
+import { coffeeCollection, coffeeImage, type Coffee, type Temperature } from "../data/content";
+import { BrewGuide } from "./BrewGuide";
 
 export function MenuSection() {
+  const [temperature, setTemperature] = useState<Temperature>("warm");
+  const [selected, setSelected] = useState<Coffee | null>(null);
+  const collection = coffeeCollection[temperature];
   return (
-    <section
-      className="page-width section-padding"
-      id="menu"
-      aria-labelledby="menu-title"
-    >
-      <SectionHeading eyebrow="Daily cups" title="A small menu, brewed with focus." id="menu-title" />
-      <div className="menu-grid">
-        {menu.map((item) => (
-          <article className="menu-card" key={item.name}>
-            <div className="menu-image-wrap">
-              <img
-                className="menu-image"
-                src={item.image}
-                alt={item.alt}
-                loading="lazy"
-              />
-            </div>
-            <div className="menu-content">
-              <div className="grid gap-1">
-                <h3 className="text-[2rem] leading-none">{item.name}</h3>
-              </div>
-              <p className="text-base leading-[1.65] text-muted">{item.note}</p>
-            </div>
-          </article>
-        ))}
-      </div>
+    <section className="cups section-shell" id="cups" aria-labelledby="cups-title">
+      <div className="section-kicker"><span className="eyebrow">03 / The cups</span><span className="small-note">Sixteen possibilities. Zero milk. Zero sugar.</span></div>
+      <div className="cups-heading" data-reveal><h2 id="cups-title">One love.<br /><em>So many ways to brew.</em></h2><p>Find a cup that feels like you.<br />Then discover how to make it.</p></div>
+      <div className="cup-controls"><div className="temperature-tabs" role="group" aria-label="Choose coffee temperature">
+        <button type="button" aria-pressed={temperature === "warm"} aria-controls="coffee-collection" onClick={() => setTemperature("warm")}>Served warm <span>10</span></button>
+        <button type="button" aria-pressed={temperature === "iced"} aria-controls="coffee-collection" onClick={() => setTemperature("iced")}>Over ice <span>06</span></button>
+      </div><p className="collection-note"><span aria-hidden="true">↗</span> Every cup has a ritual. Click to explore.</p></div>
+      <p className="sr-only" role="status">Showing {collection.length} {temperature} coffee ideas.</p>
+      <div className="cups-grid" id="coffee-collection">{collection.map((cup, i) => <article className="cup-card" key={cup.id} data-scroll data-reveal>
+        <div className="cup-photo"><img src={coffeeImage(cup)} alt={`${cup.name}, imagined for CoffeeMasiha`} loading="lazy" decoding="async" width="800" height="1200" /><span className="cup-number">{String(i + 1).padStart(2, "0")}</span><span className="cup-detail">{cup.detail}</span><span className="photo-open-icon" aria-hidden="true">↗</span></div>
+        <p className="eyebrow cup-mood">{cup.mood}</p><h3 id={`cup-${cup.id}`}>{cup.name}</h3><p className="cup-note">{cup.note}</p>
+        <div className="cup-footer"><span>{cup.family}</span><span>Discover the ritual ↗</span></div>
+        <button className="cup-open" type="button" onClick={() => setSelected(cup)} aria-label={`Discover how to make ${cup.name}`} aria-haspopup="dialog"><span className="sr-only">Open {cup.name} brewing guide</span></button>
+      </article>)}</div>
+      <p className="collection-caption">An imagined collection, illustrated with individually created AI photographs. Recipes are starting points for your own ritual.</p>
+      {selected && <BrewGuide coffee={selected} key={selected.id} onClose={() => setSelected(null)} />}
     </section>
   );
 }

@@ -1,0 +1,109 @@
+/* Scroll choreography. All progress values come from the shared Lenis frame. */
+.hero-scroll { height: 220svh; --recede: 0; background: #283321; }
+.hero-scroll .hero { background: #283321; min-height: 620px; }
+.hero::after { display: none; }
+.hero-contours { position: absolute; inset: 0; opacity: .14; overflow: hidden; }
+.hero-contours svg { width: 100%; height: 100%; stroke: #c7d3a6; stroke-width: .8; transform: rotate(calc(var(--p) * 12deg)) scale(1.2); }
+.hero-orbit-type { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; opacity: var(--recede); overflow: hidden; font: 600 clamp(90px,13vw,220px)/.9 var(--font-display); letter-spacing: -.045em; color: #d0dbb4; pointer-events: none; }
+.hero-orbit-type span { white-space: nowrap; width: max-content; transform: translate3d(calc(-38vw + var(--p) * 28vw),0,0); }
+.hero-orbit-type span:nth-child(2) { transform: translate3d(calc(-8vw - var(--p) * 27vw),0,0); color: transparent; -webkit-text-stroke: 1px #d0dbb4aa; }
+.hero-orbit-type em { font-weight: 500; }
+.hero-visual { position: absolute; z-index: 1; top: calc(var(--recede) * 13%); left: calc(var(--recede) * 25%); width: calc(100% - var(--recede) * 50%); height: calc(100% - var(--recede) * 30%); border-radius: calc(var(--recede) * 18px); overflow: hidden; transform: rotate(calc(var(--recede) * -4deg)); box-shadow: 0 35px 100px #0003; }
+.hero-scroll .hero-photo { position: absolute; inset: 0; z-index: 0; transform: scale(calc(1.035 + var(--recede) * .035)); }
+.hero-scroll .hero-photo img { filter: saturate(.83) brightness(.86); object-position: calc(50% + var(--recede) * 28%) center; }
+.hero-visual-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg,#17211365,transparent 78%),linear-gradient(0deg,#1721135e,transparent 50%); opacity: calc(1 - var(--recede) * .7); }
+.hero-photo-caption { position: absolute; left: 25px; bottom: 20px; z-index: 2; opacity: clamp(0,(var(--p) - .6) * 4,1); font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
+.hero-scroll .site-header { position: relative; z-index: 5; opacity: 1; }
+.hero-scroll .hero-content { z-index: 3; transform: translateY(calc(var(--p) * -130px)); opacity: clamp(0,1 - var(--p) * 3.6,1); }
+.hero-scroll .title-line:first-child { transform: translateX(calc(var(--p) * -170px)); }
+.hero-scroll .title-line:nth-child(2) { transform: translateX(calc(var(--p) * 150px)); }
+.hero-scroll .hero-foot { z-index: 4; opacity: clamp(0,1 - var(--p) * 4,1); }
+.hero-scroll .hero-whisper { inset: auto 5vw 8% auto; z-index: 3; align-items: flex-start; text-align: left; gap: 15px; opacity: clamp(0,(var(--p) - .66) * 5,1); transform: translateY(calc((1 - var(--p)) * 80px)); }
+.hero-scroll .hero-whisper > p { font-size: clamp(38px,4.6vw,70px); line-height: .95; }
+.hero-scroll .hero-whisper .eyebrow { font-size: 7px; }
+.hero-end-note { position: absolute; inset: auto auto 5% 5vw; display: grid; gap: 14px; opacity: clamp(0,(var(--p) - .75) * 5,1); font-size: 8px; text-transform: uppercase; letter-spacing: .15em; }
+.manifesto { z-index: 2; margin-top: -30px; border-radius: 30px 30px 0 0; background: #eee8da; }
+/* The ritual becomes a stack of photographic cards moving through one scene. */
+.ritual { height: 310svh; background: #263221; --turn-one: 0; --turn-two: 0; }
+.ritual-sticky { background: radial-gradient(ellipse at 80% 35%,#47553560,transparent 60%),#263221; }
+.ritual-images { inset: 15% 7% 16% 47%; z-index: 2; overflow: visible; transform: translateY(calc((var(--p) - .5) * -25px)); }
+.ritual-image { border-radius: 10px; box-shadow: 0 35px 90px #101a0d70; }
+.ritual-image img { filter: saturate(.88) brightness(.9); transform: scale(1.04); object-position: 70% center; }
+.ritual-image-0 { transform: rotate(calc(-4deg - var(--turn-one) * 4deg)) scale(calc(1 - var(--turn-one) * .06)); }
+.ritual-image-1 { clip-path: none; transform: translateY(calc((1 - var(--turn-one)) * 160%)) rotate(calc(8deg - var(--turn-one) * 7deg - var(--turn-two) * 5deg)) scale(calc(1 - var(--turn-two) * .06)); opacity: clamp(0,var(--turn-one) * 5,1); }
+.ritual-image-2 { clip-path: none; transform: translateY(calc((1 - var(--turn-two)) * 160%)) rotate(calc(7deg - var(--turn-two) * 10deg)); opacity: clamp(0,var(--turn-two) * 5,1); }
+.ritual-image-2 img { object-position: center; }
+.ritual-shade { z-index: 0; opacity: .14; background: repeating-radial-gradient(ellipse at 20% 60%,transparent 0,transparent 100px,#c7d3a633 101px,transparent 102px); }
+.ritual-top, .ritual-bottom { z-index: 4; }
+.ritual-type { top: 15%; left: -3vw; z-index: 1; color: transparent; -webkit-text-stroke: 1px #c8d7a535; font-size: 23vw; transform: translateX(calc(var(--p) * -14vw)); }
+.ritual-type span { transition: none; transform: none; }
+.ritual-chapters { z-index: 3; left: 5vw; right: auto; bottom: 24%; width: 48%; min-height: 230px; }
+.ritual-chapter { transition: none; }
+.ritual[data-stage] .ritual-chapter { opacity: var(--chapter-opacity,0); transform: translateY(var(--chapter-y,0px)); }
+.ritual-chapter h2 { font-size: clamp(60px,7.5vw,120px); line-height: 1; margin: 20px 0; text-shadow: 0 2px 30px #26322190; }
+.ritual-chapter > p:last-child { max-width: 315px; }
+.ritual-side-note { position: absolute; right: 2.4vw; top: 50%; transform: translate(50%,-50%) rotate(90deg); font-size: 8px; letter-spacing: .16em; text-transform: uppercase; opacity: .5; z-index: 4; }
+.cups { background: #eee8da; z-index: 2; border-radius: 30px 30px 0 0; margin-top: -30px; }
+.cup-card[data-reveal] { transform: translate3d(0,65px,0) rotate(1.4deg); transition: opacity .8s, transform 1.1s cubic-bezier(.16,1,.3,1); }
+.cup-card:nth-child(even)[data-reveal] { transform: translate3d(0,90px,0) rotate(-1.4deg); transition-delay: .07s; }
+.cup-card[data-reveal].revealed { transform: none; }
+.daydream-window { border-radius: calc((1 - var(--travel,.5)) * 30px); }
+.footer-wordmark { transform: translateY(calc((1 - var(--travel,.5)) * 70px)); }
+@media (max-width: 1000px) {
+  .hero-scroll .hero-photo img { object-position: 72% center; }
+  .hero-visual { left: calc(var(--recede) * 20%); width: calc(100% - var(--recede) * 40%); }
+  .ritual-images { inset: 17% 6% 21% 43%; }
+  .ritual-chapters { width: 57%; }
+  .ritual-chapter h2 { font-size: 8vw; }
+}
+@media (max-width: 600px) {
+  .hero-scroll { height: 195svh; }
+  .hero-scroll .hero { min-height: 620px; }
+  .hero-visual { left: calc(var(--recede) * 13%); top: calc(var(--recede) * 23%); width: calc(100% - var(--recede) * 26%); height: calc(100% - var(--recede) * 50%); border-radius: calc(var(--recede) * 8px); }
+  .hero-scroll .hero-photo img { object-position: 73% center; }
+  .hero-orbit-type { font-size: 24vw; gap: 20px; }
+  .hero-orbit-type span { transform: translateX(calc(-90vw + var(--p) * 75vw)); }
+  .hero-orbit-type span:nth-child(2) { transform: translateX(calc(-15vw - var(--p) * 50vw)); }
+  .hero-scroll .hero-whisper { inset: auto 6vw 10% auto; gap: 12px; }
+  .hero-scroll .hero-whisper > p { font-size: 39px; }
+  .hero-scroll .hero-whisper .eyebrow { font-size: 6px; }
+  .hero-end-note { left: 6vw; bottom: 5%; font-size: 6px; }
+  .hero-end-note > span:last-child { display: none; }
+  .hero-photo-caption { left: 16px; bottom: 16px; font-size: 6px; }
+  .manifesto, .cups { border-radius: 20px 20px 0 0; margin-top: -20px; }
+  .ritual { height: 290svh; }
+  .ritual-images { inset: 17% 10% 34% 16%; }
+  .ritual-type { top: 11%; font-size: 34vw; }
+  .ritual-chapters { left: 6vw; right: 6vw; bottom: 70px; width: auto; min-height: 180px; }
+  .ritual-chapter h2 { font-size: 57px; margin: 13px 0; }
+  .ritual-chapter > p:last-child { max-width: 310px; font-size: 10px; }
+  .ritual-chapter > .eyebrow { font-size: 7px; }
+  .ritual-side-note { display: none; }
+  .ritual-bottom { bottom: 25px; font-size: 8px; }
+}
+@media (max-height: 650px) and (min-width: 601px) {
+  .hero-scroll .hero { min-height: 100svh; }
+  .hero-scroll .hero-whisper > p { font-size: 40px; }
+  .hero-scroll .hero-whisper { bottom: 6%; }
+  .ritual-chapters { bottom: 20%; min-height: 180px; }
+  .ritual-chapter h2 { font-size: 55px; }
+  .ritual-images { inset: 17% 8% 16% 49%; }
+  .ritual-type { font-size: 18vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll { height: auto; }
+  .hero-scroll .hero { position: relative; }
+  .hero-visual { inset: 0; width: 100%; height: 100%; transform: none; border-radius: 0; }
+  .hero-scroll .hero-content, .hero-scroll .title-line, .hero-scroll .hero-photo { transform: none; }
+  .hero-scroll .hero-content, .hero-scroll .hero-foot, .hero-scroll .site-header { opacity: 1; }
+  .hero-contours, .hero-orbit-type, .hero-scroll .hero-whisper, .hero-end-note, .hero-photo-caption { display: none; }
+  .hero-scroll .hero-photo img { object-position: 70% center; }
+  .manifesto, .cups { margin-top: 0; border-radius: 0; }
+  .ritual { height: auto; }
+  .ritual-sticky { height: auto; position: relative; }
+  .ritual-images, .ritual-type, .ritual-side-note { display: none; }
+  .ritual-chapters { position: static; width: auto; }
+  .ritual[data-stage] .ritual-chapter { position: static; opacity: 1; visibility: visible; transform: none; }
+  .ritual-static-image { display: block; border-radius: 8px; object-position: 70% center; }
+  .cup-card[data-reveal], .cup-card:nth-child(even)[data-reveal], .footer-wordmark { transform: none; opacity: 1; }
+}

@@ -1,35 +1,8 @@
-import { brewNotes } from "../data/content";
-import { Eyebrow } from "./ui";
-
 export function ApproachSection() {
   return (
-    <section
-      className="approach-section"
-      id="approach"
-      aria-labelledby="approach-title"
-    >
-      <div>
-        <Eyebrow>The approach</Eyebrow>
-        <h2 id="approach-title" className="section-title">
-          Clean cups need quiet decisions.
-        </h2>
-        <p className="body-copy mt-6 max-w-[600px]">
-          Every brew starts with filtered water, a measured recipe, and beans
-          roasted for clarity. We keep the menu narrow so each cup can be served
-          with the right grind, temperature, and rest time.
-        </p>
-      </div>
-      <div
-        className="brew-notes"
-        aria-label="Brewing notes"
-      >
-        {brewNotes.map((note, index) => (
-          <div className="brew-note" key={note}>
-            <span className="font-extrabold text-amber">{String(index + 1).padStart(2, "0")}</span>
-            <p className="leading-[1.55] text-[#40372d]">{note}</p>
-          </div>
-        ))}
-      </div>
+    <section className="daydream" id="approach" data-scroll aria-labelledby="daydream-title">
+      <div className="daydream-window"><img src="/dream-interior.jpg" alt="Visual inspiration for a warm, sunlit CoffeeMasiha counter" loading="lazy" width="1536" height="1024" /><div className="daydream-overlay" /><div className="daydream-copy"><p className="eyebrow">04 / The feeling</p><h2 id="daydream-title">Somewhere to sit.<br /><em>Nothing to rush.</em></h2><p>Sunlight across the counter. The scent of a fresh brew.<br />A seat you don’t feel like leaving.</p><span className="concept-caption">An AI-imagined glimpse of the space</span></div></div>
+      <div className="values-strip"><span>Water first</span><i aria-hidden="true">✳</i><span>No milk</span><i aria-hidden="true">✳</i><span>No sugar</span><i aria-hidden="true">✳</i><span>Time to just be</span></div>
     </section>
   );
 }
