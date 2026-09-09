@@ -16,11 +16,11 @@ export function Hero() {
         <div className="hero-content">
           <p className="eyebrow hero-enter">Water. Bean. Time.</p>
           <h1 id="hero-title"><span className="title-line"><span>A slower cup.</span></span><span className="title-line"><span>A bigger <em>dream.</em></span></span></h1>
-          <div className="hero-bottom hero-enter"><p>A little coffee space I dream of bringing to life.<br />Black coffee. Warm light. A moment of your own.</p><a className="round-link" href="#dream"><span>Step inside the dream</span><span className="round-arrow" aria-hidden="true">↘</span></a></div>
+          <div className="hero-bottom hero-enter"><p>A little coffee space I dream of bringing to life.<br />Black coffee. Warm light. A moment of your own.</p><a className="round-link" href="#dream"><span>Step inside the dream</span><span className="round-arrow" aria-hidden="true"><span className="ui-arrow ui-arrow-down-right" /></span></a></div>
         </div>
         <div className="hero-whisper" aria-hidden="true"><span className="eyebrow">The world can wait a moment.</span><p>Good things<br /><em>take their time.</em></p></div>
-        <div className="hero-foot"><span>An idea by Mohnish</span><span className="scroll-cue">Scroll to unfold <span aria-hidden="true">↓</span></span><span>Made of possibility</span></div>
-        <div className="hero-end-note" aria-hidden="true"><span>01 / A dream taking shape</span><span>Keep wandering ↓</span></div>
+        <div className="hero-foot"><span>An idea by Mohnish</span><span className="scroll-cue">Scroll to unfold <span className="ui-arrow ui-arrow-down" aria-hidden="true" /></span><span>Made of possibility</span></div>
+        <div className="hero-end-note" aria-hidden="true"><span>01 / A dream taking shape</span><span>Keep wandering <span className="ui-arrow ui-arrow-down" /></span></div>
       </div>
     </section>
   );

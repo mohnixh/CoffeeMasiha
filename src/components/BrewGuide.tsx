@@ -40,7 +40,7 @@ export function BrewGuide({ coffee, onClose }: { coffee: Coffee; onClose: () => 
     }
   }}>
     <div className="brew-dialog-scroll" data-lenis-prevent>
-      <button autoFocus type="button" className="brew-close" aria-label="Close brewing guide" onClick={onClose}>✕</button>
+      <button autoFocus type="button" className="brew-close" aria-label="Close brewing guide" onClick={onClose}><span className="close-mark" aria-hidden="true" /></button>
       <div className="brew-cover"><img src={coffeeImage(coffee)} alt={`${coffee.name}, an imagined CoffeeMasiha preparation`} /><div className="brew-cover-copy"><span className="eyebrow">The CoffeeMasiha brew journal</span><span className="brew-cover-mark">A little care.<br /><em>A lovely cup.</em></span><span className="eyebrow">Coffee. Water. Nothing to hide.</span></div></div>
       <div className="brew-content">
         <p className="eyebrow">{coffee.temperature === "warm" ? "Served warm" : "Over ice"} / {coffee.family}</p>
@@ -50,14 +50,14 @@ export function BrewGuide({ coffee, onClose }: { coffee: Coffee; onClose: () => 
         <div className="brew-method-heading"><h3>The little ritual</h3><span role="status">{completed.length} / {coffee.steps.length} steps</span></div>
         <div className="brew-completion" aria-hidden="true"><i style={{ width: `${completed.length / coffee.steps.length * 100}%` }} /></div>
         <ol className="brew-steps">{coffee.steps.map((step, i) => <li key={step.title} className={completed.includes(i) ? "step-done" : ""}>
-          <button type="button" className="step-check" aria-label={`Mark step ${i + 1}: ${step.title} ${completed.includes(i) ? "incomplete" : "complete"}`} aria-pressed={completed.includes(i)} onClick={() => setCompleted(current => current.includes(i) ? current.filter(n => n !== i) : [...current, i])}>{completed.includes(i) ? "✓" : String(i + 1).padStart(2, "0")}</button>
+          <button type="button" className="step-check" aria-label={`Mark step ${i + 1}: ${step.title} ${completed.includes(i) ? "incomplete" : "complete"}`} aria-pressed={completed.includes(i)} onClick={() => setCompleted(current => current.includes(i) ? current.filter(n => n !== i) : [...current, i])}>{completed.includes(i) ? <span className="check-mark" aria-hidden="true" /> : String(i + 1).padStart(2, "0")}</button>
           <div><h4>{step.title}</h4><p>{step.text}</p>{step.seconds && <BrewTimer seconds={step.seconds} />}</div>
         </li>)}</ol>
         {completed.length === coffee.steps.length && <p className="brew-finished" role="status">Your moment is ready. Enjoy your cup.</p>}
         <aside className="brew-tip"><span className="eyebrow">One little detail</span><p>{coffee.tip}</p></aside>
         <p className="brew-footnote">These are starting recipes to explore. Adjust to your beans, equipment, and taste. No milk, added sugar, syrups, or sweeteners.</p>
-        {coffee.source && <a className="brew-source" href={coffee.source.url} target="_blank" rel="noreferrer">Further brewing guidance: {coffee.source.label} ↗</a>}
-        <button type="button" className="back-collection" onClick={onClose}>← Back to the collection</button>
+        {coffee.source && <a className="brew-source" href={coffee.source.url} target="_blank" rel="noreferrer">Further brewing guidance: {coffee.source.label} <span className="ui-arrow ui-arrow-up-right" aria-hidden="true" /></a>}
+        <button type="button" className="back-collection" onClick={onClose}><span className="ui-arrow ui-arrow-left" aria-hidden="true" /> Back to the collection</button>
       </div>
     </div><div className="cursor-glow" aria-hidden="true" />
   </dialog>;

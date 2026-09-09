@@ -13,12 +13,12 @@ export function MenuSection() {
       <div className="cup-controls"><div className="temperature-tabs" role="group" aria-label="Choose coffee temperature">
         <button type="button" aria-pressed={temperature === "warm"} aria-controls="coffee-collection" onClick={() => setTemperature("warm")}>Served warm <span>10</span></button>
         <button type="button" aria-pressed={temperature === "iced"} aria-controls="coffee-collection" onClick={() => setTemperature("iced")}>Over ice <span>06</span></button>
-      </div><p className="collection-note"><span aria-hidden="true">↗</span> Every cup has a ritual. Click to explore.</p></div>
+      </div><p className="collection-note"><span className="ui-arrow ui-arrow-up-right" aria-hidden="true" /> Every cup has a ritual. Click to explore.</p></div>
       <p className="sr-only" role="status">Showing {collection.length} {temperature} coffee ideas.</p>
       <div className="cups-grid" id="coffee-collection">{collection.map((cup, i) => <article className="cup-card" key={cup.id} data-scroll data-reveal>
-        <div className="cup-photo"><img src={coffeeImage(cup)} alt={`${cup.name}, imagined for CoffeeMasiha`} loading="lazy" decoding="async" width="800" height="1200" /><span className="cup-number">{String(i + 1).padStart(2, "0")}</span><span className="cup-detail">{cup.detail}</span><span className="photo-open-icon" aria-hidden="true">↗</span></div>
+        <div className="cup-photo"><img src={coffeeImage(cup)} alt={`${cup.name}, imagined for CoffeeMasiha`} loading="lazy" decoding="async" width="800" height="1200" /><span className="cup-number">{String(i + 1).padStart(2, "0")}</span><span className="cup-detail">{cup.detail}</span><span className="photo-open-icon" aria-hidden="true"><span className="ui-arrow ui-arrow-up-right" /></span></div>
         <p className="eyebrow cup-mood">{cup.mood}</p><h3 id={`cup-${cup.id}`}>{cup.name}</h3><p className="cup-note">{cup.note}</p>
-        <div className="cup-footer"><span>{cup.family}</span><span>Discover the ritual ↗</span></div>
+        <div className="cup-footer"><span>{cup.family}</span><span>Discover the ritual <span className="ui-arrow ui-arrow-up-right" aria-hidden="true" /></span></div>
         <button className="cup-open" type="button" onClick={() => setSelected(cup)} aria-label={`Discover how to make ${cup.name}`} aria-haspopup="dialog"><span className="sr-only">Open {cup.name} brewing guide</span></button>
       </article>)}</div>
       <p className="collection-caption">An imagined collection, illustrated with individually created AI photographs. Recipes are starting points for your own ritual.</p>

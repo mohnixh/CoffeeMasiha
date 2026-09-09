@@ -20,7 +20,7 @@ export default function BrewScrollScene() {
             <p className="eyebrow">{chapter.number} — {chapter.label}</p><h2>{chapter.title}</h2><p>{chapter.text}</p>
           </article>)}
         </div>
-        <div className="ritual-bottom"><span>Three quiet acts</span><div className="chapter-track" aria-hidden="true">{chapters.map(c => <span key={c.number}>{c.number}<i /></span>)}</div><span className="ritual-scroll">Keep wandering ↓</span></div>
+        <div className="ritual-bottom"><span>Three quiet acts</span><div className="chapter-track" aria-hidden="true">{chapters.map(c => <span key={c.number}>{c.number}<i /></span>)}</div><span className="ritual-scroll">Keep wandering <span className="ui-arrow ui-arrow-down" aria-hidden="true" /></span></div>
       </div>
     </section>
   );

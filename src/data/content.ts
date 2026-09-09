@@ -14,14 +14,14 @@ export const coffees: Coffee[] = [
   {
     id: "hot-americano", name: "Hot Americano", mood: "A softer start", temperature: "warm", family: "Espresso", time: "2–3 min", grind: "Fine",
     note: "Espresso opened up with hot water. A full-flavoured cup with room to linger.", detail: "Espresso · Hot water",
-    ingredients: ["18 g coffee → about 36 g espresso", "120–150 ml hot filtered water"], equipment: "Espresso machine, grinder, scale, warm mug",
+    ingredients: ["18 g coffee, yielding about 36 g espresso", "120–150 ml hot filtered water"], equipment: "Espresso machine, grinder, scale, warm mug",
     steps: [shot, { title: "Warm the cup", text: "Rinse your mug with a little hot water, then empty it." }, { title: "Open it up", text: "Pour the espresso into the mug. Gently add 120–150 ml hot water, depending on the strength you enjoy." }, { title: "Give it a moment", text: "Stir once, let the temperature settle, and taste. Add a little more water if you prefer a lighter cup." }],
     tip: "The added water changes strength, not the espresso extraction. Start with a balanced shot.", source: espressoSource,
   },
   {
     id: "long-black", name: "Long Black", mood: "Water first. Character intact.", temperature: "warm", family: "Espresso", time: "2–3 min", grind: "Fine",
     note: "Espresso poured over hot water. A shorter, bolder cousin of the Americano.", detail: "Hot water · Espresso on top",
-    ingredients: ["18 g coffee → about 36 g espresso", "60–90 ml hot filtered water"], equipment: "Espresso machine, grinder, scale, small cup",
+    ingredients: ["18 g coffee, yielding about 36 g espresso", "60–90 ml hot filtered water"], equipment: "Espresso machine, grinder, scale, small cup",
     steps: [{ title: "Begin with water", text: "Add 60–90 ml hot water to a small warmed cup." }, shot, { title: "Float the shot", text: "Pour the freshly extracted espresso gently onto the hot water, keeping as much of its natural crema as possible." }, { title: "Taste the layers", text: "Take a moment before sipping. Stir lightly if you prefer an even flavour from first sip to last." }],
     tip: "Water first is the defining gesture. Use less water for a more concentrated cup.", source: { label: "Breville · Long Black", url: "https://www.breville.com/us/en/coffee-journey/recipes/long-black.html" },
   },
@@ -84,7 +84,7 @@ export const coffees: Coffee[] = [
   {
     id: "iced-americano", name: "Iced Americano", mood: "A brighter pause", temperature: "iced", family: "Espresso", time: "2–3 min", grind: "Fine",
     note: "Espresso, cool water, and clear ice. Honest character with a crisp change of pace.", detail: "Espresso · Water · Ice",
-    ingredients: ["18 g coffee → about 36 g espresso", "120 ml cold filtered water", "100 g ice made from water"], equipment: "Espresso machine, grinder, scale, glass",
+    ingredients: ["18 g coffee, yielding about 36 g espresso", "120 ml cold filtered water", "100 g ice made from water"], equipment: "Espresso machine, grinder, scale, glass",
     steps: [shot, { title: "Build the chill", text: "Add 100 g ice and 120 ml cold water to a glass with enough room for the espresso." }, { title: "Pour the coffee", text: "Gently pour the fresh shot over the cold water and ice." }, { title: "Bring it together", text: "Stir once and taste. Add a splash more cold water if you want a lighter cup." }],
     tip: "Use plain water ice. Larger cubes melt a little more slowly.", source: espressoSource,
   },
@@ -112,7 +112,7 @@ export const coffees: Coffee[] = [
   {
     id: "sparkling-espresso", name: "Sparkling Espresso", mood: "A little unexpected", temperature: "iced", family: "Espresso", time: "2–3 min", grind: "Fine",
     note: "Espresso meets plain sparkling water. A lively cup with absolutely no syrup or tonic.", detail: "Espresso · Unsweetened bubbles",
-    ingredients: ["18 g coffee → about 36 g espresso", "120 ml plain unsweetened sparkling water", "80–100 g plain ice"], equipment: "Espresso machine, grinder, scale, tall glass",
+    ingredients: ["18 g coffee, yielding about 36 g espresso", "120 ml plain unsweetened sparkling water", "80–100 g plain ice"], equipment: "Espresso machine, grinder, scale, tall glass",
     steps: [shot, { title: "Add ice & bubbles", text: "Put the ice in a tall glass, then slowly add 120 ml cold plain sparkling water. Leave generous space at the top." }, { title: "Pour slowly", text: "Let the espresso cool briefly, then pour it gently over the back of a spoon into the glass. It may foam as it meets the bubbles." }, { title: "Sip while lively", text: "Give it one gentle stir and enjoy while the carbonation is fresh." }],
     tip: "Choose plain sparkling water with no sweeteners. Tonic water is a different ingredient and often contains sugar.",
   },
