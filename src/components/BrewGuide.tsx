@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { coffeeImage, type Coffee } from "../data/content";
 import { BrewTimer } from "./BrewTimer";
 
-export function BrewGuide({ coffee, onClose }: { coffee: Coffee; onClose: () => void }) {
+export function BrewGuide({ coffee, returnFocus, onClose }: { coffee: Coffee; returnFocus: HTMLButtonElement; onClose: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [completed, setCompleted] = useState<number[]>([]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
-    const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const overflow = document.body.style.overflow;
     dialog.showModal();
     dialog.querySelector<HTMLButtonElement>(".brew-close")?.focus({ preventScroll: true });
@@ -18,10 +17,10 @@ export function BrewGuide({ coffee, onClose }: { coffee: Coffee; onClose: () => 
       dialog.close();
       document.body.style.overflow = overflow;
       window.dispatchEvent(new CustomEvent("coffee:modal", { detail: false }));
-      opener?.focus({ preventScroll: true });
+      returnFocus.focus({ preventScroll: true });
     };
-  }, []);
-  return <dialog ref={dialogRef} className="brew-dialog" aria-labelledby="brew-title" onKeyDown={(event) => {
+  }, [returnFocus]);
+  return <dialog ref={dialogRef} className="brew-dialog" aria-labelledby="brew-title" onCancel={event => { event.preventDefault(); onClose(); }} onKeyDown={(event) => {
     if (event.key !== "Tab") return;
     const focusable = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], [tabindex="0"]'));
     const first = focusable[0];
@@ -49,6 +48,7 @@ export function BrewGuide({ coffee, onClose }: { coffee: Coffee; onClose: () => 
         <div className="brew-prep"><div><h3>What goes in</h3><ul>{coffee.ingredients.map(item => <li key={item}>{item}</li>)}</ul></div><div><h3>What you’ll use</h3><p>{coffee.equipment}</p></div></div>
         <div className="brew-method-heading"><h3>The little ritual</h3><span role="status">{completed.length} / {coffee.steps.length} steps</span></div>
         <div className="brew-completion" aria-hidden="true"><i style={{ width: `${completed.length / coffee.steps.length * 100}%` }} /></div>
+        <div className="brew-companion" aria-hidden="true"><div className="companion-cup"><span style={{ height: `${completed.length / coffee.steps.length * 85}%` }} /></div><p>{completed.length === coffee.steps.length ? "A moment, made by you." : "A little closer with every step."}</p></div>
         <ol className="brew-steps">{coffee.steps.map((step, i) => <li key={step.title} className={completed.includes(i) ? "step-done" : ""}>
           <button type="button" className="step-check" aria-label={`Mark step ${i + 1}: ${step.title} ${completed.includes(i) ? "incomplete" : "complete"}`} aria-pressed={completed.includes(i)} onClick={() => setCompleted(current => current.includes(i) ? current.filter(n => n !== i) : [...current, i])}>{completed.includes(i) ? <span className="check-mark" aria-hidden="true" /> : String(i + 1).padStart(2, "0")}</button>
           <div><h4>{step.title}</h4><p>{step.text}</p>{step.seconds && <BrewTimer seconds={step.seconds} />}</div>

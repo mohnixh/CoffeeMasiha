@@ -1,7 +1,10 @@
+import { CopperThread } from "./CopperThread";
+
 export function Hero() {
   return (
     <section className="hero-scroll" id="top" data-scroll aria-labelledby="hero-title">
       <div className="hero">
+        <CopperThread chapter="opening" />
         <div className="hero-contours" aria-hidden="true"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">{[0,1,2,3,4,5].map(i => <ellipse key={i} cx="770" cy="470" rx={260+i*95} ry={100+i*75} transform={`rotate(-28 770 470)`} />)}</svg></div>
         <div className="hero-orbit-type" aria-hidden="true"><span>WATER. <em>BEAN.</em> WATER.</span><span><em>TIME.</em> INTENTION. <em>TIME.</em></span></div>
         <div className="hero-visual" aria-hidden="true"><div className="hero-photo"><picture>

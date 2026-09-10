@@ -20,6 +20,9 @@ npm run lint
 - Sixteen coffee ideas: ten warm and six iced, all without milk, added sugar, or sweeteners. Each opens a keyboard-accessible native dialog with ingredients, equipment, four steps, check-off progress, and optional pauseable bloom/steep timers.
 - Reduced-motion preferences disable smooth scrolling and present all ritual chapters as a normal vertical story. Preferences can change while the page is open.
 - Email and Instagram invitations; no prices, location, opening hours, or signup promises.
+- A three-choice coffee finder offers two or three curated matches with preparation times and equipment context. Overnight brews are excluded from quick suggestions.
+- The selected photograph transitions between its card and brewing guide using the browser View Transitions API when supported. Reduced-motion and older browsers open directly; keyboard focus returns to the originating button.
+- A copper thread links the opening and illustrated dream with the ritual progress track. Brewing guides include a filling-cup progress illustration and circular timers.
 
 ## Source
 
@@ -32,6 +35,9 @@ Espresso is the final design, with warm parchment, chocolate and copper details.
 - `src/data/content.ts`: warm and iced collection, recipes and brewing references.
 - `src/components/BrewGuide.tsx`: native dialog, focus return and scroll lock.
 - `src/components/BrewTimer.tsx`: optional wall-clock countdown with pause/resume/reset.
+- `src/components/CoffeeFinder.tsx`, `src/data/finder.ts`: preferences and curated suggestions.
+- `src/useCoffeeGuide.ts`: shared photo transition and guide selection.
+- `src/discovery.css`: finder, transition, copper thread, and brewing companion styles.
 - `src/components/CursorGlow.tsx`: pointer glow with event cleanup.
 - `src/components/`: page sections.
 - `src/styles.css`: responsive layouts and UI components.

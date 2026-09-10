@@ -1,9 +1,12 @@
+import { CopperThread } from "./CopperThread";
+
 const statement = "Some dreams begin with a grand plan. Mine begins with a quiet counter, a warm cup, and the feeling that you can stay a little longer.";
 const dreamNote = "This is my dream of a coffee space, taking its first shape here. A place built around simple cups and the pleasure of slowing down.";
 
 export function Intro() {
   return (
     <section className="manifesto dream-story section-shell" id="dream" data-scroll aria-labelledby="dream-title">
+      <CopperThread chapter="dream" />
       <div className="section-kicker"><span className="eyebrow">01 / The dream</span><span className="small-note">Not a place yet. A possibility.</span></div>
       <div className="dream-composition">
         <div className="dream-letter">

@@ -29,6 +29,10 @@ export function useScrollExperience() {
         const pinned = clamp(-rect.top / Math.max(1, rect.height - height));
         section.style.setProperty("--travel", reduced ? "0.5" : travel.toFixed(4));
         section.style.setProperty("--p", reduced ? "0" : pinned.toFixed(4));
+        if (section.classList.contains("hero-scroll") || section.classList.contains("dream-story")) {
+          const drawn = section.classList.contains("hero-scroll") ? pinned : clamp((height * .65 - rect.top) / rect.height);
+          section.style.setProperty("--thread", reduced ? "1" : drawn.toFixed(4));
+        }
         if (section.classList.contains("hero-scroll")) {
           section.style.setProperty("--recede", reduced ? "0" : smooth((pinned - .08) / .75).toFixed(4));
         }

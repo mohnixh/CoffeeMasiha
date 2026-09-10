@@ -24,7 +24,7 @@ export function BrewTimer({ seconds }: { seconds: number }) {
     }
   };
   return <div className="brew-timer">
-    <span className="timer-display" aria-label={`${remaining} seconds remaining`}>{String(Math.floor(remaining / 60)).padStart(2, "0")}:{String(remaining % 60).padStart(2, "0")}</span>
+    <span className="timer-clock"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" /><circle className="timer-ring" cx="24" cy="24" r="21" pathLength="1" strokeDasharray="1" strokeDashoffset={1 - remaining / seconds} /></svg><span className="timer-display" aria-label={`${remaining} seconds remaining`}>{String(Math.floor(remaining / 60)).padStart(2, "0")}:{String(remaining % 60).padStart(2, "0")}</span></span>
     <button type="button" onClick={toggle}>{running ? "Pause" : remaining === 0 ? "Again" : remaining === seconds ? "Start timer" : "Resume"}</button>
     {(remaining !== seconds || running) && <button className="timer-reset" type="button" onClick={() => { setRunning(false); setRemaining(seconds); }}>Reset</button>}
     <span className="sr-only" role="status">{remaining === 0 ? "Timer complete. Time for the next step." : ""}</span>

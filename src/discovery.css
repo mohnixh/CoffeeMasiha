@@ -1,0 +1,102 @@
+.coffee-finder { margin: 0 0 55px; padding: 35px; border: 1px solid #8b512e40; border-radius: 14px; background: radial-gradient(ellipse at top right,#fff3dc80,transparent 70%),#e8d4b7; }
+.finder-intro { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 32px; }
+.finder-intro .eyebrow { color: var(--muted); font-size: 8px; }
+.finder-intro h3 { font-size: clamp(37px,4vw,60px); letter-spacing: -.04em; line-height: 1; margin-top: 14px; }
+.finder-intro h3 em { color: var(--accent); }
+.finder-intro > p { font-size: 11px; line-height: 1.85; color: var(--muted); }
+.finder-questions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; }
+.finder-questions fieldset { padding: 0; margin: 0; border: 0; min-width: 0; }
+.finder-questions legend { font-size: 11px; margin-bottom: 14px; padding: 0; }
+.finder-questions legend > span { color: var(--accent); font-size: 8px; padding-right: 9px; }
+.finder-options { display: flex; gap: 6px; }
+.finder-options label { position: relative; flex: 1; cursor: pointer; }
+.finder-options input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.finder-options label > span { display: grid; place-items: center; min-height: 44px; padding: 10px 7px; border: 1px solid #8b512e45; border-radius: 30px; font-size: 10px; color: var(--muted); transition: background .25s,color .25s,border-color .25s; }
+.finder-options label:hover > span { border-color: var(--accent); }
+.finder-options input:checked + span { background: var(--dark); border-color: var(--dark); color: var(--light); }
+.finder-options input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 4px; }
+.finder-status { display: flex; justify-content: space-between; align-items: center; gap: 15px; min-height: 32px; margin-top: 19px; color: var(--muted); font-size: 9px; }
+.finder-status button { border: 0; padding: 10px 0; background: transparent; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.finder-results { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 25px; padding-top: 27px; margin-top: 12px; border-top: 1px solid #8b512e40; animation: finder-arrive .5s ease both; }
+.finder-results:has(.finder-result:nth-child(3)) { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.finder-result { display: flex; gap: 19px; min-width: 0; }
+.finder-photo { width: 110px; height: 150px; flex-shrink: 0; border-radius: 60px 60px 5px 5px; overflow: hidden; }
+.finder-photo img { object-position: center 62%; }
+.finder-result > div:last-child { min-width: 0; }
+.finder-result .eyebrow { font-size: 7px; color: var(--accent); margin: 4px 0 9px; }
+.finder-result h4 { font: 31px/1.05 var(--font-display); margin: 0 0 12px; letter-spacing: -.025em; }
+.finder-result p:not(.eyebrow) { font-size: 10px; line-height: 1.8; color: var(--muted); }
+.finder-result button { display: inline-flex; align-items: center; gap: 16px; background: transparent; border: 0; border-bottom: 1px solid var(--accent); color: var(--ink); font-size: 10px; padding: 13px 0 8px; margin-top: 3px; cursor: pointer; }
+.finder-footnote { grid-column: 1 / -1; font-size: 9px; color: var(--muted); line-height: 1.8; }
+.finder-results:has(.finder-result:nth-child(3)) .finder-result { flex-direction: column; }
+.finder-results:has(.finder-result:nth-child(3)) .finder-photo { width: 100%; height: 180px; border-radius: 5px; }
+@keyframes finder-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* The same photograph travels between its card and the top-layer dialog. */
+.brew-cover > img { view-transition-name: coffee-photo; }
+::view-transition-group(coffee-photo) { animation-duration: .6s; animation-timing-function: cubic-bezier(.22,1,.36,1); overflow: hidden; }
+::view-transition-old(coffee-photo), ::view-transition-new(coffee-photo) { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: normal; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .2s; }
+::view-transition { pointer-events: none; }
+.brew-dialog[open] { animation: none; }
+.brew-content { animation: finder-arrive .5s .12s both; }
+.brew-companion { display: flex; align-items: center; gap: 25px; padding: 0 5px 30px; }
+.brew-companion > p { font: italic 22px/1.2 var(--font-display); color: var(--accent); }
+.companion-cup { position: relative; isolation: isolate; width: 45px; height: 34px; flex-shrink: 0; border: 1px solid var(--accent); border-radius: 2px 2px 15px 15px; }
+.companion-cup::after { content: ""; position: absolute; top: 4px; right: -12px; width: 11px; height: 16px; border: 1px solid var(--accent); border-left: 0; border-radius: 0 12px 12px 0; }
+.companion-cup > span { position: absolute; left: 3px; right: 3px; bottom: 3px; background: var(--accent); opacity: .7; border-radius: 1px 1px 11px 11px; transition: height .6s cubic-bezier(.22,1,.36,1); }
+.timer-clock { position: relative; display: grid; place-items: center; width: 48px; height: 48px; }
+.timer-clock svg { position: absolute; inset: 0; fill: none; stroke: var(--line); stroke-width: 1.5; transform: rotate(-90deg); }
+.timer-clock .timer-ring { stroke: var(--accent); transition: stroke-dashoffset .25s linear; }
+.timer-clock .timer-display { font-size: 10px; }
+.brew-timer { padding: 5px 12px 5px 5px; border-radius: 30px; }
+
+/* One copper gesture continues through the opening, drawing, and ritual track. */
+.copper-thread { position: absolute; left: .7vw; top: 0; bottom: 0; width: 2.3vw; pointer-events: none; z-index: 3; }
+.copper-thread svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.copper-thread path { stroke: var(--highlight); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.thread-track { opacity: .15; }
+.thread-ink { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--thread,0)); opacity: .65; }
+.copper-thread-opening { top: 110px; opacity: var(--recede); }
+.copper-thread-dream path { stroke: var(--accent); }
+.dream-drawing .sketch-dimension { stroke-dasharray: 700; stroke-dashoffset: calc(700 - var(--thread,0) * 700); }
+.chapter-track { position: relative; }
+.chapter-track::before { content: ""; position: absolute; right: calc(100% + 22px); top: 50%; width: 8vw; height: 1px; background: var(--highlight); opacity: .4; }
+.chapter-track i::after { background: var(--highlight); }
+.footer-invitation { font: 30px/1.25 var(--font-display); margin-bottom: 65px; color: var(--highlight); }
+
+@media (max-width: 1000px) {
+  .coffee-finder { padding: 26px; }
+  .finder-questions { gap: 14px; }
+  .finder-result { flex-direction: column; }
+  .finder-photo { width: 100%; height: 185px; border-radius: 6px; }
+  .finder-result h4 { font-size: 29px; }
+}
+@media (max-width: 600px) {
+  .coffee-finder { padding: 23px 18px 15px; margin-bottom: 35px; }
+  .finder-intro { align-items: start; flex-direction: column; gap: 13px; margin-bottom: 26px; }
+  .finder-intro h3 { font-size: 42px; }
+  .finder-intro > p { font-size: 10px; }
+  .finder-intro > p br { display: none; }
+  .finder-questions { grid-template-columns: 1fr; gap: 20px; }
+  .finder-questions legend { margin-bottom: 10px; }
+  .finder-options label > span { font-size: 11px; }
+  .finder-results, .finder-results:has(.finder-result:nth-child(3)) { grid-template-columns: 1fr; gap: 25px; }
+  .finder-result, .finder-results:has(.finder-result:nth-child(3)) .finder-result { flex-direction: row; gap: 16px; }
+  .finder-photo, .finder-results:has(.finder-result:nth-child(3)) .finder-photo { width: 82px; height: 120px; border-radius: 44px 44px 4px 4px; }
+  .finder-result h4 { font-size: 27px; }
+  .finder-status { font-size: 8px; }
+  .finder-result button { min-height: 44px; }
+  .copper-thread { left: 1vw; width: 2.3vw; }
+  .copper-thread-opening { top: 165px; }
+  .chapter-track::before { display: none; }
+  .footer-invitation { font-size: 27px; max-width: 270px; margin-bottom: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .finder-results, .brew-content { animation: none; }
+  .thread-ink { stroke-dashoffset: 0; }
+  .copper-thread-opening { display: none; }
+  .dream-drawing .sketch-dimension { stroke-dashoffset: 0; }
+  .companion-cup > span, .timer-ring { transition: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none; }
+}
