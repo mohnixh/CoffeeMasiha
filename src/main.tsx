@@ -5,6 +5,7 @@ import "./styles.css";
 import "./motion.css";
 import "./espresso.css";
 import "./discovery.css";
+import "./shelf.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -13,7 +13,7 @@ export function Hero() {
         </picture></div><div className="hero-visual-shade" /><span className="hero-photo-caption">A simple cup. An entire world.</span></div>
         <header className="site-header">
           <a className="brand" href="#top" aria-label="CoffeeMasiha home"><span className="bean-mark" aria-hidden="true" />CoffeeMasiha<span className="byline">by Mohnish</span></a>
-          <nav aria-label="Main navigation"><a href="#dream">The dream</a><a href="#ritual">The ritual</a><a href="#cups">The cups</a></nav>
+          <nav aria-label="Main navigation"><a href="#dream">The dream</a><a href="#ritual">The ritual</a><a href="#cups">The cups</a><a href="/shelf">The shelf</a></nav>
           <a className="header-note" href="#connect">A dream in progress <span className="status-dot" /></a>
         </header>
         <div className="hero-content">
