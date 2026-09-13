@@ -58,7 +58,7 @@ export function BrewGuide({ coffee, returnFocus, onClose }: { coffee: Coffee; re
         <aside className="brew-tip"><span className="eyebrow">One little detail</span><p>{coffee.tip}</p></aside>
         <p className="brew-footnote">These are starting recipes to explore. Adjust to your beans, equipment, and taste. No milk, added sugar, syrups, or sweeteners.</p>
         {coffee.source && <a className="brew-source" href={coffee.source.url} target="_blank" rel="noreferrer">Further brewing guidance: {coffee.source.label} <span className="ui-arrow ui-arrow-up-right" aria-hidden="true" /></a>}
-        <BrewShelf coffee={coffee} />
+        <BrewShelf coffee={coffee} onExplore={onClose} />
         <button type="button" className="back-collection" onClick={onClose}><span className="ui-arrow ui-arrow-left" aria-hidden="true" /> Back to the collection</button>
       </div>
     </div><div className="cursor-glow" aria-hidden="true" />

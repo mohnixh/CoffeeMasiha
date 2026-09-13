@@ -99,8 +99,18 @@ export function useScrollExperience() {
       else { lenis?.start(); schedule(); }
     };
     const resizeObserver = new ResizeObserver(schedule);
+    const scrollToSection = (event: Event) => {
+      const selector = (event as CustomEvent<string>).detail;
+      if (selector !== '#shelf-browser') return;
+      const target = document.getElementById('shelf-browser');
+      if (!target) return;
+      target.focus({ preventScroll: true });
+      if (lenis) { lenis.resize(); lenis.scrollTo(target, { duration: 1.3 }); }
+      else target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    };
     resizeObserver.observe(document.body);
     window.addEventListener("coffee:modal", handleModal);
+    window.addEventListener('coffee:scroll-to', scrollToSection);
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
     preference.addEventListener("change", configure);
@@ -125,6 +135,7 @@ export function useScrollExperience() {
       resizeObserver.disconnect();
       collectionObserver.disconnect();
       window.removeEventListener("coffee:modal", handleModal);
+      window.removeEventListener('coffee:scroll-to', scrollToSection);
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
       preference.removeEventListener("change", configure);
