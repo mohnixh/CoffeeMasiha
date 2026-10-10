@@ -20,11 +20,11 @@ export const beans: Bean[] = [
   { id: 'yelnoorkhan', image: '/beans/yelnoorkhan.png', name: 'Yelnoorkhan Estate', seller: 'Naivo', roast: 'Filter', tone: 'filter', origin: 'India', notes: 'Black tea · marmalade · orange blossom', process: 'Anaerobic washed', thought: 'A tea-like direction for a slow pour or an iced filter.', url: 'https://naivo.in/product/yelnoorkhan-estate-anaerobic-washed/' },
   { id: 'attikan', image: '/beans/attikan.jpg', name: 'Attikan Estate', seller: 'Blue Tokai', roast: 'Medium-dark', tone: 'dark', origin: 'Biligiri Hills, Karnataka', notes: 'Dark chocolate · figs · roasted almond', process: 'Washed', thought: 'A starting point for a chocolate-toned Americano or moka pot.', url: 'https://bluetokaicoffee.com/collections/roasted-and-ground-coffee-beans/products/attikan-estate' },
   { id: 'baarbara', image: '/beans/baarbara.png', name: 'Baarbara Estate', seller: 'Toffee Coffee Roasters', roast: 'Light to medium', tone: 'medium', origin: 'Baarbara Estate, India', notes: 'Almond · cocoa · honey', process: 'Estate coffee', thought: 'For a gentle, rounded cup that leaves room to linger.', url: 'https://toffeecoffeeroasters.com/products/baarbara-estate-coffee-copy' },
-  { id: 'vienna', image: '/beans/vienna.jpg', name: 'Vienna Roast', seller: 'Blue Tokai', roast: 'Dark', tone: 'dark', origin: 'Chikmagalur & Shevaroys', notes: 'Cocoa · oaky · bittersweet', process: 'Washed', thought: 'For those who enjoy a distinctly bitter, heavier black cup.', url: 'https://bluetokaicoffee.com/collections/roasted-and-ground-coffee-beans/products/vienna-roast' },
+  { id: 'vienna', image: '/beans/vienna.jpg', name: 'Vienna Roast', seller: 'Blue Tokai', roast: 'Dark', tone: 'dark', origin: 'Chikmagalur & Shevaroys', notes: 'Cocoa · oaky · bittersweet', process: 'Washed', thought: 'A very roast-led cup. The roaster recommends it with milk; expect pronounced bitterness when brewed black.', url: 'https://bluetokaicoffee.com/collections/roasted-and-ground-coffee-beans/products/vienna-roast' },
 ];
 export function matchingBeans(coffee: Coffee) {
   const ids = coffee.family === 'Espresso' || coffee.family === 'Stovetop' ? ['attikan', 'signature']
-    : coffee.grind.startsWith('Coarse') ? ['vienna', 'baarbara']
+    : coffee.grind.startsWith('Coarse') ? ['baarbara', 'attikan']
     : coffee.family === 'Filter' ? ['yung-gun', 'yelnoorkhan'] : ['salawara', 'peaberry'];
   return ids.map(id => beans.find(bean => bean.id === id)!);
 }

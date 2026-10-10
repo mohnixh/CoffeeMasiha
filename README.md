@@ -50,4 +50,4 @@ Espresso is the final design, with warm parchment, chocolate and copper details.
 
 Lenis integration follows https://github.com/darkroomengineering/lenis. Motion direction was informed by the user-provided https://landonorris.com/ reference; code and coffee assets are original to this project.
 
-`npm run build` type-checks and creates `dist/`. Vercel deployment settings are in `vercel.json`.
+`npm run build` type-checks and creates `dist/`. The build also renders the homepage into the HTML so its content is readable before JavaScript loads; React hydrates that markup for the interactive finder, guides, and shelf. Vercel deployment settings are in `vercel.json`. Use `npm run dev` or `npm run preview` to open the site locally; opening `index.html` as a `file://` URL does not run Vite.

@@ -9,8 +9,7 @@ export function BrewShelf({ coffee, onExplore }: { coffee: Coffee; onExplore: ()
 }
 
 export function ShelfSection() {
-  const initialBrew = new URLSearchParams(window.location.search).get('brew');
-  const [brewId, setBrewId] = useState(coffees.some(c => c.id === initialBrew) ? initialBrew! : 'pour-over');
+  const [brewId, setBrewId] = useState('pour-over');
   const [view, setView] = useState('beans');
   const [roast, setRoast] = useState('all');
   const [seller, setSeller] = useState('all');
@@ -19,6 +18,13 @@ export function ShelfSection() {
   const recommended = matchingBeans(coffee);
   const grind = coffee.grind.toLowerCase();
   const particleSize = grind.includes('extra-fine') ? 1 : grind.startsWith('coarse') ? 7 : grind.includes('coarse') ? 5 : grind.includes('medium') ? 3 : 2;
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get('brew');
+    if (coffees.some(c => c.id === requested)) {
+      setBrewId(requested!);
+      setView('grind');
+    }
+  }, []);
   useEffect(() => {
     let transition: ReturnType<typeof setTimeout>;
     const explore = (event: Event) => {
@@ -56,7 +62,7 @@ export function ShelfSection() {
     </>}
     {view === 'grind' && <section className="shelf-grind section-shell" id="grind" aria-labelledby="grind-heading"><div><p className="eyebrow">The small detail that changes the cup</p><h2 id="grind-heading">Right bean.<br /><em>Right grind.</em></h2><p>Choose the cup you want to make. We’ll help with a starting grind and two directions to explore.</p><label htmlFor="shelf-brew">I’m making<select id="shelf-brew" value={brewId} onChange={e => setBrewId(e.target.value)}>{coffees.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select></label><p className="shelf-caption">Have a grinder? Choose whole beans. Otherwise, select your brewing method on the roaster’s site. Their named grind options are more useful than a universal grinder number.</p></div><div className="grind-result" aria-live="polite"><svg viewBox="0 0 300 140" aria-hidden="true">{Array.from({ length: 140 }, (_, i) => <circle key={i} cx={15 + (i * 47 % 270)} cy={12 + (i * 31 % 116)} r={particleSize * (.4 + (i % 4) / 5)} fill="currentColor" />)}</svg><span className="eyebrow">Your starting grind</span><h3>{coffee.grind}</h3><p>For {coffee.name.toLowerCase()} · {coffee.time}</p><div className="grind-matches">{recommended.map(b => <a key={b.id} href={b.url} target="_blank" rel="noreferrer"><span><small>{b.seller}</small>{b.name}</span><Arrow /></a>)}</div><p className="shelf-caption">Grind illustration is indicative. Adjust to your equipment and taste.</p></div></section>
     }
-    {view === 'roasters' && <section className="shelf-directory section-shell" id="roasters"><p className="eyebrow">Keep wandering / The Indian roaster directory</p><h2>There’s a whole world<br /><em>in our own backyard.</em></h2><p>More shelves, more origins, more people putting their care into coffee. Explore each seller’s current collection; choose plain, unflavoured coffee for our water-only rituals.</p><div>{roasters.map((r, i) => <a href={r.url} key={r.name} target="_blank" rel="noreferrer"><span className="eyebrow">{String(i + 1).padStart(2, '0')}</span><h3>{r.name}</h3><p>{r.note}</p><Arrow /></a>)}</div><p className="shelf-caption">Independent links, with no affiliate tracking or paid placements. CoffeeMasiha does not sell or fulfil these products. Listings reviewed September 2026; seasonal collections change.</p></section>
+    {view === 'roasters' && <section className="shelf-directory section-shell" id="roasters"><p className="eyebrow">Keep wandering / The Indian roaster directory</p><h2>There’s a whole world<br /><em>in our own backyard.</em></h2><p>More shelves, more origins, more people putting their care into coffee. Explore each seller’s current collection; choose plain, unflavoured coffee for our water-only rituals.</p><div>{roasters.map((r, i) => <a href={r.url} key={r.name} target="_blank" rel="noreferrer"><span className="eyebrow">{String(i + 1).padStart(2, '0')}</span><h3>{r.name}</h3><p>{r.note}</p><Arrow /></a>)}</div><p className="shelf-caption">Independent links, with no affiliate tracking or paid placements. CoffeeMasiha does not sell or fulfil these products. Links reviewed October 2026; seasonal collections change.</p></section>
     }
       </div>
     </div>
