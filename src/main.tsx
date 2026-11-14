@@ -6,7 +6,6 @@ import "./motion.css";
 import "./espresso.css";
 import "./discovery.css";
 import "./shelf.css";
-import "./guestbook.css";
 
 const root = document.getElementById("root")!;
 const app = <StrictMode><App /></StrictMode>;
