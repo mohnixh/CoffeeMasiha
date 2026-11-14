@@ -16,7 +16,7 @@ export function Intro() {
             <span className="dream-personal" aria-hidden="true">Mine begins with a <em>quiet counter,</em> a <em>warm cup,</em> and the feeling that you can <em>stay a little longer.</em></span>
           </h2>
         </div>
-        <div className="dream-drawing" aria-hidden="true">
+        <div className="dream-drawing" data-scroll aria-hidden="true">
           <div className="dream-orbit" />
           <svg viewBox="0 0 400 500" fill="none">
             <defs>
@@ -28,18 +28,18 @@ export function Intro() {
               <path className="sketch-wall" d="M45 440V195a155 155 0 0 1 310 0v245Z" />
               <circle className="sketch-sun" cx="288" cy="156" r="53" />
               <path className="sketch-light" d="m263 188-188 252h115l131-252Z" />
-              <path d="M227 82v205m-84-120h163M56 287h297M71 287v153m261-153v153M71 337h261M172 337v103" />
-              <path d="M82 277h235v10H82zM91 267h214v10H91z" />
+              <path className="sketch-ink" pathLength="1" d="M227 82v205m-84-120h163M56 287h297M71 287v153m261-153v153M71 337h261M172 337v103" />
+              <path className="sketch-ink" pathLength="1" d="M82 277h235v10H82zM91 267h214v10H91z" />
               <path className="sketch-cup" d="M130 231h49v18a20 20 0 0 1-20 20h-9a20 20 0 0 1-20-20Z" />
               <ellipse className="sketch-coffee" cx="154.5" cy="232" rx="23" ry="4" />
-              <path d="M179 235h7a10 10 0 0 1 0 20h-8m-54 15h65" />
+              <path className="sketch-ink" pathLength="1" d="M179 235h7a10 10 0 0 1 0 20h-8m-54 15h65" />
               <g className="sketch-steam"><path d="M145 219c-16-17 13-23 0-42m17 39c-12-15 11-23 0-36" /></g>
-              <path d="M264 266v-53m0 21c-25 0-28-22-28-22 26-3 28 22 28 22Zm0 13c26-1 27-23 27-23-25 0-27 23-27 23Zm-14 0h28l-5 20h-18Z" />
-              <path d="M103 440v-55h49v55m-56-55h63v-8H96zm171 55v-55h49v55m-56-55h63v-8h-63z" />
+              <path className="sketch-ink" pathLength="1" d="M264 266v-53m0 21c-25 0-28-22-28-22 26-3 28 22 28 22Zm0 13c26-1 27-23 27-23-25 0-27 23-27 23Zm-14 0h28l-5 20h-18Z" />
+              <path className="sketch-ink" pathLength="1" d="M103 440v-55h49v55m-56-55h63v-8H96zm171 55v-55h49v55m-56-55h63v-8h-63z" />
               <path d="M45 439h310" />
             </g>
-            <path className="sketch-frame" d="M45 440V195a155 155 0 0 1 310 0v245Z" />
-            <path className="sketch-outer-frame" d="M37 440V195a163 163 0 0 1 326 0v245" />
+            <path className="sketch-frame sketch-ink" pathLength="1" d="M45 440V195a155 155 0 0 1 310 0v245Z" />
+            <path className="sketch-outer-frame sketch-ink" pathLength="1" d="M37 440V195a163 163 0 0 1 326 0v245" />
             <path className="sketch-dimension" d="M28 459h344m-344-5v10m344-10v10M24 180v260m-5-260h10m-10 260h10" />
           </svg>
           <span className="dream-drawing-mark">01</span>
