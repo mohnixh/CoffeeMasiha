@@ -14,7 +14,7 @@ export function ShelfSection() {
   const [roast, setRoast] = useState('all');
   const [seller, setSeller] = useState('all');
   const coffee = coffees.find(c => c.id === brewId)!;
-  const visible = beans.filter(b => (roast === 'all' || b.tone === roast) && (seller === 'all' || b.seller === seller));
+  const visible = beans.filter(b => (roast === 'all' || (roast === 'filter' ? /filter/i.test(b.roast) : b.tone === roast)) && (seller === 'all' || b.seller === seller));
   const recommended = matchingBeans(coffee);
   const grind = coffee.grind.toLowerCase();
   const particleSize = grind.includes('extra-fine') ? 1 : grind.startsWith('coarse') ? 7 : grind.includes('coarse') ? 5 : grind.includes('medium') ? 3 : 2;

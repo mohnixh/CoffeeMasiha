@@ -11,6 +11,7 @@ npm install
 npm run dev
 npm run build
 npm run lint
+npm test
 ```
 
 ## Experience
@@ -23,6 +24,7 @@ npm run lint
 - A three-choice coffee finder offers two or three curated matches with preparation times and equipment context. Overnight brews are excluded from quick suggestions.
 - The selected photograph transitions between its card and brewing guide using the browser View Transitions API when supported. Reduced-motion and older browsers open directly; keyboard focus returns to the originating button.
 - A copper thread links the opening and illustrated dream with the ritual progress track. Brewing guides include a filling-cup progress illustration and circular timers.
+- An anonymous guestbook with a note form, reviewed public wall, and GitHub-backed storage. No visitor account or database is needed. See [guestbook activation and moderation](docs/guestbook.md) for the required server credential and repository labels; posting is unavailable until configured.
 
 ## Source
 

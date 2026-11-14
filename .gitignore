@@ -5,4 +5,5 @@ dist/
 .wrangler/
 .env
 .env.*
+!.env.example
 .claude/launch.json

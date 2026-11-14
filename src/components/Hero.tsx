@@ -13,12 +13,12 @@ export function Hero() {
         </picture></div><div className="hero-visual-shade" /><span className="hero-photo-caption">A simple cup. An entire world.</span></div>
         <header className="site-header">
           <a className="brand" href="#top" aria-label="CoffeeMasiha home"><span className="bean-mark" aria-hidden="true" />CoffeeMasiha<span className="byline">by Mohnish</span></a>
-          <nav aria-label="Main navigation"><a href="#dream">The dream</a><a href="#ritual">The ritual</a><a href="#cups">The cups</a><a href="#shelf">The shelf</a></nav>
+          <nav aria-label="Main navigation"><a href="#dream">The dream</a><a href="#ritual">The ritual</a><a href="#cups">The cups</a><a href="#shelf">The shelf</a><a href="#guestbook">Your notes</a></nav>
           <a className="header-note" href="#connect">A dream in progress <span className="status-dot" /></a>
         </header>
         <div className="hero-content">
           <p className="eyebrow hero-enter">Water. Bean. Time.</p>
-          <h1 id="hero-title"><span className="title-line"><span>A slower cup.</span></span><span className="title-line"><span>A bigger <em>dream.</em></span></span></h1>
+          <h1 id="hero-title"><span className="title-line"><span>A slower cup.</span></span>{' '}<span className="title-line"><span>A bigger <em>dream.</em></span></span></h1>
           <div className="hero-bottom hero-enter"><p>A little coffee space I dream of bringing to life.<br />Black coffee. Warm light. A moment of your own.</p><a className="round-link" href="#dream"><span>Step inside the dream</span><span className="round-arrow" aria-hidden="true"><span className="ui-arrow ui-arrow-down-right" /></span></a></div>
         </div>
         <div className="hero-whisper" aria-hidden="true"><span className="eyebrow">The world can wait a moment.</span><p>Good things<br /><em>take their time.</em></p></div>

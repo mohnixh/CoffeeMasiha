@@ -48,6 +48,8 @@
 .timer-clock { position: relative; display: grid; place-items: center; width: 48px; height: 48px; }
 .timer-clock svg { position: absolute; inset: 0; fill: none; stroke: var(--line); stroke-width: 1.5; transform: rotate(-90deg); }
 .timer-clock .timer-ring { stroke: var(--accent); transition: stroke-dashoffset .25s linear; }
+.timer-complete:not(:empty) { width: 100%; font-size: 11px; color: var(--accent); }
+.timer-complete:empty { display: none; }
 .timer-clock .timer-display { font-size: 10px; }
 .brew-timer { padding: 5px 12px 5px 5px; border-radius: 30px; }
 
