@@ -19,6 +19,7 @@ npm run lint
 - A pinned opening that recedes from a full-screen photograph into a rotated frame, counter-moving oversized typography, three stacking photographic ritual chapters, cup parallax, and an expanding daydream image. Lenis and the progress-driven visuals run in one shared animation frame. A small pointer glow follows fine-pointer devices and is disabled for touch and reduced motion.
 - Sixteen coffee ideas: ten warm and six iced, all without milk, added sugar, or sweeteners. Each opens a keyboard-accessible native dialog with ingredients, equipment, four steps, check-off progress, and optional pauseable bloom/steep timers.
 - Reduced-motion preferences disable smooth scrolling and present all ritual chapters as a normal vertical story. Preferences can change while the page is open.
+- A dated coffee shelf with ten coffees, tasting-note search, brew-method and roaster filters, and verified 250 g prices where available. Purchases happen on the roasters’ own sites.
 - Email and Instagram invitations; no prices, location, opening hours, or signup promises.
 - A three-choice coffee finder offers two or three curated matches with preparation times and equipment context. Overnight brews are excluded from quick suggestions.
 - The selected photograph transitions between its card and brewing guide using the browser View Transitions API when supported. Reduced-motion and older browsers open directly; keyboard focus returns to the originating button.

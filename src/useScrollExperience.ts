@@ -59,17 +59,17 @@ export function useScrollExperience() {
       frame = 0;
       lenis?.raf(time);
       if (needsUpdate) { needsUpdate = false; update(); }
-      if (lenis && !frame) frame = requestAnimationFrame(tick);
+      if (lenis && !frame && !document.hidden) frame = requestAnimationFrame(tick);
     };
     const schedule = () => {
       needsUpdate = true;
-      if (!frame) frame = requestAnimationFrame(tick);
+      if (!frame && !document.hidden) frame = requestAnimationFrame(tick);
     };
     const configure = () => {
       lenis?.destroy();
       lenis = undefined;
       if (!preference.matches) {
-        lenis = new Lenis({ autoRaf: false, lerp: .09, smoothWheel: true, anchors: true });
+        lenis = new Lenis({ autoRaf: false, lerp: .1, smoothWheel: true, anchors: { duration: 1.15 }, stopInertiaOnNavigate: true });
         lenis.on("scroll", () => { needsUpdate = true; });
         if (modalOpen) lenis.stop();
       }
@@ -99,6 +99,10 @@ export function useScrollExperience() {
       else { lenis?.start(); schedule(); }
     };
     const resizeObserver = new ResizeObserver(schedule);
+    const handleVisibility = () => {
+      if (document.hidden) { cancelAnimationFrame(frame); frame = 0; }
+      else { lenis?.resize(); schedule(); }
+    };
     const scrollToSection = (event: Event) => {
       const selector = (event as CustomEvent<string>).detail;
       if (selector !== '#shelf-browser') return;
@@ -113,6 +117,7 @@ export function useScrollExperience() {
     window.addEventListener('coffee:scroll-to', scrollToSection);
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
+    document.addEventListener('visibilitychange', handleVisibility);
     preference.addEventListener("change", configure);
     refresh();
     configure();
@@ -138,6 +143,7 @@ export function useScrollExperience() {
       window.removeEventListener('coffee:scroll-to', scrollToSection);
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
+      document.removeEventListener('visibilitychange', handleVisibility);
       preference.removeEventListener("change", configure);
     };
   }, []);

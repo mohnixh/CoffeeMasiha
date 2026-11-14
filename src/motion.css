@@ -8,9 +8,9 @@
 .hero-orbit-type span { white-space: nowrap; width: max-content; transform: translate3d(calc(-38vw + var(--p) * 28vw),0,0); }
 .hero-orbit-type span:nth-child(2) { transform: translate3d(calc(-8vw - var(--p) * 27vw),0,0); color: transparent; -webkit-text-stroke: 1px #d0dbb4aa; }
 .hero-orbit-type em { font-weight: 500; }
-.hero-visual { position: absolute; z-index: 1; top: calc(var(--recede) * 13%); left: calc(var(--recede) * 25%); width: calc(100% - var(--recede) * 50%); height: calc(100% - var(--recede) * 30%); border-radius: calc(var(--recede) * 18px); overflow: hidden; transform: rotate(calc(var(--recede) * -4deg)); box-shadow: 0 35px 100px #0003; }
+.hero-visual { position: absolute; z-index: 1; inset: 0; border-radius: calc(var(--recede) * 18px); overflow: hidden; transform: translate3d(0,calc(var(--recede) * -2vh),0) scale(calc(1 - var(--recede) * .32)) rotate(calc(var(--recede) * -3deg)); box-shadow: 0 35px 100px #0003; }
 .hero-scroll .hero-photo { position: absolute; inset: 0; z-index: 0; transform: scale(calc(1.035 + var(--recede) * .035)); }
-.hero-scroll .hero-photo img { filter: saturate(.83) brightness(.86); object-position: calc(50% + var(--recede) * 28%) center; }
+.hero-scroll .hero-photo img { filter: saturate(.83) brightness(.86); object-position: 65% center; }
 .hero-visual-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg,#17211365,transparent 78%),linear-gradient(0deg,#1721135e,transparent 50%); opacity: calc(1 - var(--recede) * .7); }
 .hero-photo-caption { position: absolute; left: 25px; bottom: 20px; z-index: 2; opacity: clamp(0,(var(--p) - .6) * 4,1); font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
 .hero-scroll .site-header { position: relative; z-index: 5; opacity: 1; }
@@ -51,7 +51,6 @@
 .footer-wordmark { transform: translateY(calc((1 - var(--travel,.5)) * 70px)); }
 @media (max-width: 1000px) {
   .hero-scroll .hero-photo img { object-position: 72% center; }
-  .hero-visual { left: calc(var(--recede) * 20%); width: calc(100% - var(--recede) * 40%); }
   .ritual-images { inset: 17% 6% 21% 43%; }
   .ritual-chapters { width: 57%; }
   .ritual-chapter h2 { font-size: 8vw; }
@@ -59,7 +58,7 @@
 @media (max-width: 600px) {
   .hero-scroll { height: 195svh; }
   .hero-scroll .hero { min-height: 620px; }
-  .hero-visual { left: calc(var(--recede) * 13%); top: calc(var(--recede) * 23%); width: calc(100% - var(--recede) * 26%); height: calc(100% - var(--recede) * 50%); border-radius: calc(var(--recede) * 8px); }
+  .hero-visual { transform: translate3d(0,calc(var(--recede) * -3vh),0) scale(calc(1 - var(--recede) * .3)) rotate(calc(var(--recede) * -2deg)); border-radius: calc(var(--recede) * 8px); }
   .hero-scroll .hero-photo img { object-position: 73% center; }
   .hero-orbit-type { font-size: 24vw; gap: 20px; }
   .hero-orbit-type span { transform: translateX(calc(-90vw + var(--p) * 75vw)); }
