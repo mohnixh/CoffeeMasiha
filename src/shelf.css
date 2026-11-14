@@ -9,7 +9,6 @@
 .shelf-link:hover .ui-arrow { transform: translate(3px,-3px); }
 .shelf-grind em { color: var(--highlight); }
 .shelf-section-top { display: flex; align-items: end; justify-content: space-between; gap: 25px; }
-.shelf-section-top > a { white-space: nowrap; font-size: 11px; display: flex; align-items: center; gap: 15px; }
 .shelf-notes { max-width: 690px; font-size: 13px; color: var(--muted); margin-top: 28px; }
 .shelf-filters { display: flex; justify-content: space-between; align-items: center; gap: 25px; margin: 35px 0 20px; padding: 20px 0; border-block: 1px solid var(--line); }
 .shelf-filter-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -95,13 +94,12 @@
  .shelf-inline .bean-grid { grid-template-columns: 1fr; gap: 45px; }
  .shelf-inline .bean-card { padding: 0; }
  .shelf-inline .bean-card:nth-child(even) { margin-top: 0; }
- .bean-number,.bean-photo-arrow { top: 12px; width: 24px; height: 24px; }
+ .bean-number,.bean-photo-arrow { top: 12px; }
  .bean-number { left: 12px; }
  .bean-photo-arrow { right: 12px; }
  .bean-photo::after { inset: 7px; }
  .bean-roast-label { left: 14px; right: 12px; bottom: 14px; font-size: 8px; letter-spacing: .04em; }
  .bean-copy { padding-top: 20px; }
- .shelf-inline .bean-card h3 { font-size: 29px; }
 }
 @media(prefers-reduced-motion: reduce) { .shelf-opening-image img { transform: none; will-change: auto; }.shelf-panel { animation: none; }.shelf-view-controls button,.shelf-tab-dot { transition: none; } }
 

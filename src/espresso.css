@@ -6,12 +6,10 @@
 :root :is(.hero,.ritual,.dream-footer) :is(a,button):focus-visible { outline-color: var(--highlight); }
 :root :is(.manifesto,.cups,.brew-dialog,.skip-link) { background: var(--paper); color: var(--ink); }
 :root :is(.hero-scroll,.hero-scroll .hero,.ritual,.dream-footer) { background: var(--dark); color: var(--light); }
-:root .ritual-sticky { background: radial-gradient(ellipse at 80% 35%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 60%),var(--dark); }
 :root .hero-contours svg { stroke: var(--highlight); }
 :root .hero-orbit-type { color: var(--highlight); }
 :root .hero-orbit-type span:nth-child(2) { -webkit-text-stroke-color: color-mix(in srgb,var(--highlight) 65%,transparent); }
 :root .hero-visual-shade { background: linear-gradient(90deg,color-mix(in srgb,var(--dark) 65%,transparent),transparent 78%),linear-gradient(0deg,color-mix(in srgb,var(--dark) 45%,transparent),transparent 55%); }
-:root .hero-scroll .hero-photo img { filter: saturate(.45) brightness(.86); }
 :root :is(.hero h1 em,.footer-main h2 em) { color: var(--highlight); }
 :root .hero-bottom p { color: var(--light); }
 :root .status-dot { background: var(--highlight); box-shadow: 0 0 0 5px color-mix(in srgb,var(--highlight) 10%,transparent); }

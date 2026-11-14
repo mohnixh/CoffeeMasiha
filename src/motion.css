@@ -1,7 +1,6 @@
 /* Scroll choreography. All progress values come from the shared Lenis frame. */
 .hero-scroll { height: 220svh; --recede: 0; background: #283321; }
 .hero-scroll .hero { background: #283321; min-height: 620px; }
-.hero::after { display: none; }
 .hero-contours { position: absolute; inset: 0; opacity: .14; overflow: hidden; }
 .hero-contours svg { width: 100%; height: 100%; stroke: #c7d3a6; stroke-width: .8; transform: rotate(calc(var(--p) * 12deg)) scale(1.2); }
 .hero-orbit-type { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; opacity: var(--recede); overflow: hidden; font: 600 clamp(90px,13vw,220px)/.9 var(--font-display); letter-spacing: -.045em; color: #d0dbb4; pointer-events: none; }
