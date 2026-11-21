@@ -7,6 +7,7 @@ import BrewScrollScene from "./BrewScrollScene";
 import { CursorGlow } from "./components/CursorGlow";
 import { useScrollExperience } from "./useScrollExperience";
 import { ShelfSection } from "./components/CoffeeShelf";
+import { CoffeeShowcase } from "./components/CoffeeShowcase";
 
 export default function App() {
   useScrollExperience();
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <Intro />
         <BrewScrollScene />
+        <CoffeeShowcase />
         <MenuSection />
         <ShelfSection />
         <ApproachSection />

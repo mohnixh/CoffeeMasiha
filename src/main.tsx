@@ -7,6 +7,7 @@ import "./espresso.css";
 import "./discovery.css";
 import "./shelf.css";
 import "./details.css";
+import "./showcase.css";
 
 const root = document.getElementById("root")!;
 const app = <StrictMode><App /></StrictMode>;

@@ -26,7 +26,7 @@ export function useCoffeeGuide() {
   }
   function open(coffee: Coffee, trigger: HTMLButtonElement) {
     if (busy.current) return;
-    const photo = trigger.closest("article")?.querySelector<HTMLElement>(".cup-photo, .finder-photo") ?? null;
+    const photo = trigger.closest("article")?.querySelector<HTMLElement>(".cup-photo, .finder-photo, .showcase-photo") ?? null;
     source.current = photo;
     photo?.style.setProperty("view-transition-name", "coffee-photo");
     change(() => {

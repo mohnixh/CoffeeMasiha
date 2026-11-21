@@ -24,6 +24,7 @@ npm run lint
 - A three-choice coffee finder offers two or three curated matches with preparation times and equipment context. Overnight brews are excluded from quick suggestions.
 - The selected photograph transitions between its card and brewing guide using the browser View Transitions API when supported. Reduced-motion and older browsers open directly; keyboard focus returns to the originating button.
 - A copper thread links the opening and illustrated dream with the ritual progress track. Brewing guides include a filling-cup progress illustration and circular timers.
+- A scrolling coffee showcase moves through espresso, pour-over, and cold brew with coordinated photography, copper details, and subtle palette shifts. Its selectors use the shared Lenis controller and its ritual buttons open the existing brewing guides. Reduced-motion and short viewports show all three moments in a normal vertical layout.
 
 ## Source
 
@@ -33,6 +34,7 @@ Espresso is the final design, with warm parchment, chocolate and copper details.
 - `src/components/Intro.tsx`: the dream section and its original copy.
 - `src/useScrollExperience.ts`: Lenis lifecycle and shared scroll effects.
 - `src/BrewScrollScene.tsx`: the photographic ritual sequence.
+- `src/components/CoffeeShowcase.tsx`, `src/showcase.css`: the three-coffee scrolling showcase.
 - `src/data/content.ts`: warm and iced collection, recipes and brewing references.
 - `src/components/BrewGuide.tsx`: native dialog, focus return and scroll lock.
 - `src/components/BrewTimer.tsx`: optional wall-clock countdown with pause/resume/reset.
