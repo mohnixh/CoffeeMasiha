@@ -22,25 +22,28 @@
 .hero-scroll .hero-whisper .eyebrow { font-size: 7px; }
 .hero-end-note { position: absolute; inset: auto auto 5% 5vw; display: grid; gap: 14px; opacity: clamp(0,(var(--p) - .75) * 5,1); font-size: 8px; text-transform: uppercase; letter-spacing: .15em; }
 .manifesto { z-index: 2; margin-top: -30px; border-radius: 30px 30px 0 0; background: #eee8da; }
-/* The ritual becomes a stack of photographic cards moving through one scene. */
+/* One steady frame; photographs and copy dissolve together with scroll. */
 .ritual { height: 310svh; background: #263221; --turn-one: 0; --turn-two: 0; }
 .ritual-sticky { background: radial-gradient(ellipse at 80% 35%,#47553560,transparent 60%),#263221; }
-.ritual-images { inset: 15% 7% 16% 47%; z-index: 2; overflow: visible; transform: translateY(calc((var(--p) - .5) * -25px)); }
+.ritual-images { inset: 50% 8% auto auto; width: min(42vw,620px); height: min(62svh,610px); z-index: 2; overflow: visible; transform: translateY(-50%) rotate(-1.5deg); }
 .ritual-image { border-radius: 10px; box-shadow: 0 35px 90px #101a0d70; }
 .ritual-image img { filter: saturate(.88) brightness(.9); transform: scale(1.04); object-position: 70% center; }
-.ritual-image-0 { transform: rotate(calc(-4deg - var(--turn-one) * 4deg)) scale(calc(1 - var(--turn-one) * .06)); }
-.ritual-image-1 { clip-path: none; transform: translateY(calc((1 - var(--turn-one)) * 160%)) rotate(calc(8deg - var(--turn-one) * 7deg - var(--turn-two) * 5deg)) scale(calc(1 - var(--turn-two) * .06)); opacity: clamp(0,var(--turn-one) * 5,1); }
-.ritual-image-2 { clip-path: none; transform: translateY(calc((1 - var(--turn-two)) * 160%)) rotate(calc(7deg - var(--turn-two) * 10deg)); opacity: clamp(0,var(--turn-two) * 5,1); }
+.ritual-image-0 { opacity: 1; }
+.ritual-image-1 { clip-path: none; opacity: var(--turn-one); }
+.ritual-image-2 { clip-path: none; opacity: var(--turn-two); }
 .ritual-image-2 img { object-position: center; }
 .ritual-shade { z-index: 0; opacity: .14; background: repeating-radial-gradient(ellipse at 20% 60%,transparent 0,transparent 100px,#c7d3a633 101px,transparent 102px); }
 .ritual-top, .ritual-bottom { z-index: 4; }
 .ritual-type { top: 15%; left: -3vw; z-index: 1; color: transparent; -webkit-text-stroke: 1px #c8d7a535; font-size: 23vw; transform: translateX(calc(var(--p) * -14vw)); }
-.ritual-type span { transition: none; transform: none; }
+.ritual[data-stage] .ritual-type span { transition: none; transform: none; visibility: visible; }
+.ritual[data-stage] .ritual-type span:nth-child(1) { opacity: var(--act-0,1); }
+.ritual[data-stage] .ritual-type span:nth-child(2) { opacity: var(--act-1,0); }
+.ritual[data-stage] .ritual-type span:nth-child(3) { opacity: var(--act-2,0); }
 .ritual-chapters { z-index: 3; left: 5vw; right: auto; bottom: 24%; width: 48%; min-height: 230px; }
 .ritual-chapter { transition: none; }
-.ritual[data-stage] .ritual-chapter { opacity: var(--chapter-opacity,0); transform: translateY(var(--chapter-y,0px)); }
+.ritual[data-stage] .ritual-chapter { visibility: visible; opacity: var(--chapter-opacity,0); transform: translateY(var(--chapter-y,0px)); }
 .ritual-chapter h2 { font-size: clamp(60px,7.5vw,120px); line-height: 1; margin: 20px 0; text-shadow: 0 2px 30px #26322190; }
-.ritual-chapter > p:last-child { max-width: 315px; }
+.ritual-chapter > p:last-child { max-width: 370px; font-size: 16px; line-height: 1.75; }
 .ritual-side-note { position: absolute; right: 2.4vw; top: 50%; transform: translate(50%,-50%) rotate(90deg); font-size: 8px; letter-spacing: .16em; text-transform: uppercase; opacity: .5; z-index: 4; }
 .cups { background: #eee8da; z-index: 2; border-radius: 30px 30px 0 0; margin-top: -30px; }
 .cup-card[data-reveal] { transform: translate3d(0,65px,0) rotate(1.4deg); transition: opacity .8s, transform 1.1s cubic-bezier(.16,1,.3,1); }
@@ -50,7 +53,7 @@
 .footer-wordmark { transform: translateY(calc((1 - var(--travel,.5)) * 70px)); }
 @media (max-width: 1000px) {
   .hero-scroll .hero-photo img { object-position: 72% center; }
-  .ritual-images { inset: 17% 6% 21% 43%; }
+  .ritual-images { right: 6%; width: 43vw; height: 58svh; }
   .ritual-chapters { width: 57%; }
   .ritual-chapter h2 { font-size: 8vw; }
 }
@@ -70,12 +73,12 @@
   .hero-photo-caption { left: 16px; bottom: 16px; font-size: 6px; }
   .manifesto, .cups { border-radius: 20px 20px 0 0; margin-top: -20px; }
   .ritual { height: 290svh; }
-  .ritual-images { inset: 17% 10% 34% 16%; }
+  .ritual-images { inset: 16% auto auto 50%; width: 72%; height: 38svh; max-height: 380px; transform: translateX(-50%) rotate(-1.5deg); }
   .ritual-type { top: 11%; font-size: 34vw; }
   .ritual-chapters { left: 6vw; right: 6vw; bottom: 70px; width: auto; min-height: 180px; }
-  .ritual-chapter h2 { font-size: 57px; margin: 13px 0; }
-  .ritual-chapter > p:last-child { max-width: 310px; font-size: 10px; }
-  .ritual-chapter > .eyebrow { font-size: 7px; }
+  .ritual-chapter h2 { font-size: 48px; margin: 10px 0; }
+  .ritual-chapter > p:last-child { max-width: 340px; font-size: 14px; line-height: 1.65; }
+  .ritual-chapter > .eyebrow { font-size: 11px; }
   .ritual-side-note { display: none; }
   .ritual-bottom { bottom: 25px; font-size: 8px; }
 }
@@ -85,7 +88,7 @@
   .hero-scroll .hero-whisper { bottom: 6%; }
   .ritual-chapters { bottom: 20%; min-height: 180px; }
   .ritual-chapter h2 { font-size: 55px; }
-  .ritual-images { inset: 17% 8% 16% 49%; }
+  .ritual-images { right: 8%; width: 40vw; height: 58svh; }
   .ritual-type { font-size: 18vw; }
 }
 @media (prefers-reduced-motion: reduce) {

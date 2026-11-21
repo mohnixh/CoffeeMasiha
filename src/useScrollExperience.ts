@@ -65,18 +65,20 @@ export function useScrollExperience() {
           section.style.setProperty("--recede", reduced ? "0" : smooth((pinned - .08) / .75).toFixed(4));
         }
         if (section.classList.contains("ritual")) {
-          const stage = Math.min(2, Math.floor(pinned * 3));
-          const local = pinned * 3 - stage;
+          const first = smooth((pinned - .24) / .18);
+          const second = smooth((pinned - .58) / .18);
+          const weights = [1 - first, first * (1 - second), second];
+          const stage = weights.indexOf(Math.max(...weights));
           section.dataset.stage = String(stage);
-          section.style.setProperty("--turn-one", smooth((pinned - .22) / .16).toFixed(4));
-          section.style.setProperty("--turn-two", smooth((pinned - .55) / .16).toFixed(4));
+          section.style.setProperty("--turn-one", first.toFixed(4));
+          section.style.setProperty("--turn-two", second.toFixed(4));
+          weights.forEach((weight, i) => section.style.setProperty(`--act-${i}`, weight.toFixed(4)));
           chapters.forEach((chapter, i) => {
             if (reduced) chapter.removeAttribute("aria-hidden");
             else chapter.setAttribute("aria-hidden", String(stage !== i));
-            const enter = i === 0 ? 1 : smooth(local / .16);
-            const leave = i === 2 ? 1 : smooth((1 - local) / .13);
-            chapter.style.setProperty("--chapter-opacity", reduced ? "1" : String(stage === i ? enter * leave : 0));
-            chapter.style.setProperty("--chapter-y", `${reduced ? 0 : (1 - enter) * 35 - (1 - leave) * 25}px`);
+            chapter.style.setProperty("--chapter-opacity", reduced ? "1" : weights[i].toFixed(4));
+            const direction = i === 0 || (i === 1 && pinned > .5) ? -1 : 1;
+            chapter.style.setProperty("--chapter-y", `${reduced ? 0 : (1 - weights[i]) * 10 * direction}px`);
           });
         }
       });

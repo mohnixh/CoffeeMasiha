@@ -18,27 +18,27 @@
 .shelf-page select { display: block; margin-top: 8px; background: transparent; color: inherit; border: 0; border-bottom: 1px solid currentColor; border-radius: 0; padding: 10px 22px 10px 0; font: inherit; max-width: 100%; }
 .bean-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; margin: 20px 0 28px; }
 /* Real roaster packaging, with the open editorial rhythm of The cups. */
-.bean-card { min-width: 0; display: flex; flex-direction: column; align-self: start; }
-.bean-photo { display: block; position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #f4eadb; border-radius: 3px; isolation: isolate; }
+.bean-card { min-width: 0; display: flex; flex-direction: column; align-self: stretch; }
+.bean-photo { display: block; position: relative; height: clamp(220px,22vw,280px); overflow: hidden; background: #f4eadb; border-radius: 3px; isolation: isolate; }
 .bean-photo::after { content: ''; position: absolute; inset: 12px; border: 1px solid #72543e25; pointer-events: none; transition: border-color .5s; }
-.bean-photo-drift { position: absolute; inset: 12% 5% 14%; transform: translateY(calc((var(--travel, .5) - .5) * -22px)); }
-.bean-photo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: scale .8s cubic-bezier(.2,.7,.2,1); }
+.bean-photo-inner { position: absolute; inset: 16px 12% 38px; }
+.bean-photo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: scale .65s cubic-bezier(.22,1,.36,1); }
 .bean-number,.bean-photo-arrow { position: absolute; top: 20px; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #72543e45; border-radius: 50%; color: var(--ink); }
 .bean-number { left: 20px; font-size: 10px; }
-.bean-photo-arrow { right: 20px; transition: background .4s, color .4s, transform .5s; }
+.bean-photo-arrow { right: 20px; transition: background .4s, color .4s; }
 .bean-roast-label { position: absolute; bottom: 23px; left: 24px; right: 24px; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
-.bean-photo:hover img,.bean-photo:focus-visible img { scale: 1.05; }
+.bean-photo:hover img,.bean-photo:focus-visible img { scale: 1.025; }
 .bean-photo:hover::after { border-color: #72543e70; }
-.bean-photo:hover .bean-photo-arrow,.bean-photo:focus-visible .bean-photo-arrow { color: var(--paper); background: var(--ink); transform: rotate(8deg); }
-.bean-copy { padding-top: 25px; }
-.shelf-page .bean-seller { color: var(--accent); font-size: 9px; margin: 0 0 12px; }
+.bean-photo:hover .bean-photo-arrow,.bean-photo:focus-visible .bean-photo-arrow { color: var(--paper); background: var(--ink); }
+.bean-copy { padding-top: 20px; }
+.shelf-page .bean-seller { color: var(--accent); font-size: 12px; margin: 0 0 10px; }
 .bean-card h3 { line-height: 1.05; letter-spacing: -.035em; margin: 0 0 10px; }
 .bean-origin { margin-bottom: 18px; }
-.bean-notes { font-size: 11px; color: var(--accent); }
-.bean-thought { font-size: 12px; color: var(--muted); margin: 12px 0 24px; }
-.bean-card-bottom { border-top: 1px solid var(--line); padding-top: 16px; }
-.bean-card-bottom > span { font-size: 10px; color: var(--muted); }
-.bean-card-bottom a { display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 11px; margin-top: 8px; min-height: 40px; }
+.bean-notes { font-size: 14px; color: var(--accent); }
+.bean-thought { font-size: 14px; color: var(--muted); margin: 12px 0 24px; }
+.bean-card-bottom { margin-top: auto; border-top: 1px solid var(--line); padding-top: 16px; }
+.bean-card-bottom > span { font-size: 12px; color: var(--muted); }
+.bean-card-bottom a { display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; margin-top: 8px; min-height: 44px; }
 .bean-card-bottom a .ui-arrow { transition: transform .4s; }
 .bean-card-bottom a:hover .ui-arrow { transform: translate(3px,-3px); }
 .shelf-empty { padding: 50px 0; }.shelf-empty h3 { font-size: 36px; }.shelf-empty button { padding: 12px; margin-top: 15px; cursor: pointer; }
@@ -50,7 +50,7 @@
 .brew-shelf { border-block: 1px solid var(--line); margin: 30px 0; padding: 30px 0; }.brew-shelf h3 { font-size: 32px; margin: 12px 0; }.brew-shelf > p:not(.eyebrow) { font-size: 13px; line-height: 1.7; }.brew-shelf > div { margin-top: 20px; }.brew-shelf > div a { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }.brew-shelf small { display: block; font-size: 10px; line-height: 1.6; opacity: .7; }.brew-shelf strong { font-weight: 500; }.brew-shelf > div strong { display: block; margin-top: 5px; }.brew-shelf > small { margin-top: 15px; }
 @media(max-width: 900px) { .bean-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }.shelf-filters { align-items: start; flex-direction: column; }.shelf-section-top { align-items: start; flex-direction: column; } }
 @media(max-width: 600px) {.shelf-grind { grid-template-columns: 1fr; gap: 35px; }.bean-grid { grid-template-columns: 1fr; }.bean-card { padding: 26px; }.bean-card h3 { font-size: 42px; }.shelf-directory > div > a { grid-template-columns: 23px 1fr 18px; gap: 15px; }.shelf-directory a p { grid-column: 2; grid-row: 2; }.shelf-directory a .ui-arrow { grid-column: 3; grid-row: 1; }.shelf-directory h3 { font-size: 29px; }.grind-result { padding: 22px; } }
-@media(prefers-reduced-motion: reduce) { .bean-card,.shelf-link .ui-arrow { transition: none; }.bean-card:hover { transform: none; } }
+@media(prefers-reduced-motion: reduce) { .shelf-link .ui-arrow { transition: none; } }
 
 /* A single chapter on the homepage: choose, explore, keep wandering. */
 .shelf-inline { border-top: 1px solid var(--line); }
@@ -68,19 +68,19 @@
 .shelf-view-controls button[aria-pressed=true] { color: var(--ink); border-color: var(--accent); }
 .shelf-tab-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: auto; opacity: 0; transform: scale(.4); transition: .3s; }
 .shelf-view-controls button[aria-pressed=true] .shelf-tab-dot { opacity: 1; transform: scale(1); }
-.shelf-panel { animation: shelf-arrive .45s ease-out both; }
+.shelf-panel { animation: shelf-arrive .35s ease-out both; }
 .shelf-inline .shelf-beans,.shelf-inline .shelf-directory,.shelf-inline .shelf-grind { padding-top: 55px; }
 .shelf-inline .shelf-section-top h2 { font-size: clamp(40px,4.2vw,66px); }
-.shelf-inline .bean-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 65px 34px; margin: 35px 0 55px; }
+.shelf-inline .bean-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 44px 28px; margin: 24px 0 45px; }
+.shelf-inline .shelf-beans { max-width: 1320px; margin-inline: auto; }
 .shelf-inline .bean-card { padding: 0; }
-.shelf-inline .bean-card:nth-child(even) { margin-top: 55px; }
-.shelf-inline .bean-card h3 { font-size: 34px; }
+.shelf-inline .bean-card h3 { font-size: 30px; }
 .shelf-inline .shelf-notes { font-size: 12px; margin-top: 20px; }
 .shelf-inline .shelf-filters { margin-top: 22px; }
 .shelf-roast-hint { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
 .shelf-text-button { background: transparent; border: 0; color: var(--accent); display: inline-flex; align-items: center; gap: 15px; font-size: 12px; cursor: pointer; padding: 12px 0; }
 .brew-shelf button.shelf-link { background: transparent; color: var(--ink); cursor: pointer; border: 0; border-bottom: 1px solid currentColor; }
-@keyframes shelf-arrive { from { opacity: .25; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes shelf-arrive { from { opacity: .65; } to { opacity: 1; } }
 
 @media(max-width: 1100px) { .shelf-inline .bean-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width: 600px) {
@@ -93,7 +93,6 @@
  .shelf-tab-dot { display: none; }
  .shelf-inline .bean-grid { grid-template-columns: 1fr; gap: 45px; }
  .shelf-inline .bean-card { padding: 0; }
- .shelf-inline .bean-card:nth-child(even) { margin-top: 0; }
  .bean-number,.bean-photo-arrow { top: 12px; }
  .bean-number { left: 12px; }
  .bean-photo-arrow { right: 12px; }
@@ -103,7 +102,7 @@
 }
 @media(prefers-reduced-motion: reduce) { .shelf-opening-image img { transform: none; will-change: auto; }.shelf-panel { animation: none; }.shelf-view-controls button,.shelf-tab-dot { transition: none; } }
 
-@media(prefers-reduced-motion: reduce) { .bean-photo-drift { transform: none; }.bean-photo img,.bean-photo-arrow,.bean-photo::after,.bean-card-bottom a .ui-arrow { transition: none; }.bean-photo:hover img,.bean-photo:focus-visible img { scale: 1; } }
+@media(prefers-reduced-motion: reduce) { .bean-photo img,.bean-photo-arrow,.bean-photo::after,.bean-card-bottom a .ui-arrow { transition: none; }.bean-photo:hover img,.bean-photo:focus-visible img { scale: 1; } }
 
 /* A quieter shop shelf: useful details, room for the packaging, no hidden results. */
 .shelf-shopping-note { margin-top: 28px; padding: 20px 24px; border: 1px solid var(--line); border-left: 3px solid var(--accent); display: flex; align-items: center; gap: 28px; background: var(--soft); }
@@ -116,28 +115,23 @@
 .shelf-results { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 44px; }
 .shelf-results .shelf-text-button { padding-block: 8px; }
 .bean-brew-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; }
-.bean-brew-tags span { font-size: 10px; padding: 6px 9px; border: 1px solid var(--line); border-radius: 20px; line-height: 1.5; }
-.bean-price { margin-bottom: 10px; font-size: 11px; color: var(--muted); }
+.bean-brew-tags span { font-size: 12px; padding: 6px 9px; border: 1px solid var(--line); border-radius: 20px; line-height: 1.5; }
+.bean-price { margin-bottom: 10px; font-size: 14px; color: var(--muted); }
 .bean-price strong { font-size: 22px; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
-.bean-card-scene .bean-photo-drift { inset: -3% 0; }
-.bean-card-scene .bean-photo img { object-fit: cover; mix-blend-mode: normal; }
+.bean-card-scene .bean-photo img { mix-blend-mode: normal; border-radius: 3px; }
 .bean-card-scene .bean-roast-label { background: var(--paper); width: fit-content; padding: 7px 10px; left: 16px; bottom: 16px; }
 .bean-card-scene .bean-number,.bean-card-scene .bean-photo-arrow { background: var(--paper); }
-.bean-card { animation: bean-arrive .45s cubic-bezier(.2,.7,.2,1) both; }
-.bean-card:nth-child(3n+2) { animation-delay: .04s; }
-.bean-card:nth-child(3n) { animation-delay: .08s; }
 .shelf-page :is(button,a,input,select):focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
-@keyframes bean-arrive { from { opacity: .4; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 @media(max-width: 600px) {
  .shelf-shopping-note { align-items: start; flex-direction: column; gap: 10px; padding: 18px; }
  .shelf-search-row { grid-template-columns: 1fr; gap: 22px; }
  .shelf-search input,.shelf-search-row select { font-size: 16px; }
- .bean-photo { aspect-ratio: 4 / 5; }
- .shelf-inline .bean-card h3 { font-size: 38px; }
- .bean-thought,.bean-notes { font-size: 13px; }
+ .bean-photo { height: 250px; }
+ .shelf-inline .bean-card h3 { font-size: 32px; }
+ .bean-thought,.bean-notes { font-size: 14px; }
  .bean-number,.bean-photo-arrow { width: 30px; height: 30px; }
  .shelf-filters select { font-size: 16px; }
 }
-@media(prefers-reduced-motion: reduce) { .bean-card { animation: none; }.shelf-view-controls { position: static; } }
+@media(prefers-reduced-motion: reduce) { .shelf-view-controls { position: static; } }
 
 .shelf-beans,.shelf-directory,.shelf-grind { scroll-margin-top: 90px; }

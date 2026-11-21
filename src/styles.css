@@ -75,7 +75,7 @@ section, footer { position: relative; }
 .ritual[data-stage="0"] .ritual-type span:nth-child(1), .ritual[data-stage="1"] .ritual-type span:nth-child(2), .ritual[data-stage="2"] .ritual-type span:nth-child(3) { opacity: 1; visibility: visible; transform: translateY(0); }
 .ritual-chapters { position: absolute; }
 .ritual-chapter { position: absolute; inset: 0; opacity: 0; visibility: hidden; transform: translateY(38px); }
-.ritual[data-stage="0"] .ritual-chapter:nth-child(1), .ritual[data-stage="1"] .ritual-chapter:nth-child(2), .ritual[data-stage="2"] .ritual-chapter:nth-child(3) { opacity: 1; visibility: visible; transform: translateY(0); }
+.ritual-chapter:first-child { --chapter-opacity: 1; }
 .ritual-chapter h2 { letter-spacing: -.035em; }
 .ritual-chapter > p:last-child { font-size: 12px; line-height: 1.9; color: #ece5d5d4; }
 .ritual-static-image { display: none; }

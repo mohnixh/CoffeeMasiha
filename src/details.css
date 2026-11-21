@@ -18,7 +18,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .cup-photo, .bean-photo {
+  .cup-photo {
     transform: perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
     transition: transform .55s cubic-bezier(.2,.7,.2,1);
   }

@@ -19,7 +19,7 @@ export function CursorGlow() {
       if (!preference.matches || event.pointerType === "touch") return;
       x = event.clientX;
       y = event.clientY;
-      nextCard = event.target instanceof Element ? event.target.closest<HTMLElement>(".cup-card, .bean-card") : null;
+      nextCard = event.target instanceof Element ? event.target.closest<HTMLElement>(".cup-card") : null;
       if (!frame) frame = requestAnimationFrame(() => {
         if (card !== nextCard) {
           const target = nextCard;
@@ -27,7 +27,7 @@ export function CursorGlow() {
           card = target;
           nextCard = target;
         }
-        const photo = card?.querySelector<HTMLElement>(".cup-photo, .bean-photo");
+        const photo = card?.querySelector<HTMLElement>(".cup-photo");
         if (photo && card) {
           const rect = photo.getBoundingClientRect();
           const horizontal = Math.max(-1, Math.min(1, (x - rect.left) / rect.width * 2 - 1));
